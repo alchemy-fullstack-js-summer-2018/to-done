@@ -1,5 +1,4 @@
 import { put, post, get, del } from './request';
-import { utimes } from 'fs';
 
 const URL = 'https://to-done-bf75b.firebaseio.com/';
 const NOTES_URL = `${URL}/notes`;
