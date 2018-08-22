@@ -10,7 +10,7 @@ import {
 class Dashboard extends Component {
 
   state = {
-    id: null,
+    key: null,
     notes: [],
     title: '',
     content: '',

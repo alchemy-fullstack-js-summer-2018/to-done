@@ -22,13 +22,13 @@ class NoteForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, content, completed, id } = this.state;
+    const { title, content, completed, key } = this.state;
     const note = { title, content, completed };
-    if(id) note.id = id;
+    if(key) note.key = key;
 
     this.props.onComplete(note)
       .then(() => {
-        if(!id) return;
+        if(!key) return;
         this.setState({ title: '', content: '' });
       });
   };
@@ -38,7 +38,7 @@ class NoteForm extends Component {
   };
 
   render() {
-    const { id, title, content } = this.state;
+    const { key, title, content } = this.state;
     const { onCancel } = this.props;
 
     return (
@@ -46,8 +46,8 @@ class NoteForm extends Component {
         <InputControl name="Title" value={title} onChange={this.handleChange}/>
         <textarea rows="4" columns="60" value={content} onChange={this.handleChange}/>
         <p>
-          <button type="submit">{ id ? 'Update' : 'Add' }</button>
-          {id && <button type="button" onClick={onCancel}>Cancel</button>}
+          <button type="submit">{ key ? 'Update' : 'Add' }</button>
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );
