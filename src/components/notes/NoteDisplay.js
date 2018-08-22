@@ -13,7 +13,7 @@ class Note extends Component {
     const { note, onEdit, onDelete } = this.props;
 
     return (
-      <p>
+      <p className="note-display">
         {note.name} the {note.type} 
         <button name="edit" onClick={onEdit}>✎</button>
         <button name="delete" onClick={onDelete}>🗑</button>

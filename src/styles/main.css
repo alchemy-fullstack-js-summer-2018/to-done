@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(26, 13, 65);
+  color: black;
 }
 .note-form {
   display: flex;
@@ -10,8 +10,8 @@ body {
   padding: 10px;
   }
 
-* {
-  box-sizing: border-box;
+.note-display {
+  justify-content: space-between;
 }
 
 main {

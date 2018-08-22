@@ -1,5 +1,5 @@
 :local(.header) {
-    background-color: lightskyblue;
+    background-color: navy;
     padding: 10px;
 
   .header-container {
@@ -11,10 +11,7 @@
   .logo {
     display: flex;
     align-items: center;
-  }
-
-  .nav-link {
-    justify-content: flex-end;
+    color: white;
   }
 
   nav {
@@ -27,13 +24,13 @@
       list-style-type: none;
       display: inline-block;
       margin-left: 5px;
-      font-size: 14pt;
+      font-size: 15pt;
       padding-top: 24px;
     }
 
     a {
       text-decoration: none;
-      color: black;
+      color: white;
       padding: 5px;
     }
   }
