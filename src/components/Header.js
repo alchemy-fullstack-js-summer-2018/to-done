@@ -13,7 +13,7 @@ export class Header extends Component {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/artists">Artists</NavLink>
+              <NavLink to="/notes">Notes</NavLink>
             </li>
           </ul>
         </nav>

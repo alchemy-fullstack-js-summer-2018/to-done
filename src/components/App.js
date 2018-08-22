@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
-import Home from './Home';
-// import AnimalsContainer from './artists/ArtistsContainer';
+import Landing from './Landing';
+import DashboardContainer from './notes/DashboardContainer';
 
 export class App extends Component {
   render() {
@@ -14,8 +14,8 @@ export class App extends Component {
           </header>
           <main>
             <Switch>
-              <Route exact path="/" component={Home}/>
-              {/* <Route exact path="/artists" component={ArtistsContainer}/> */}
+              <Route exact path="/" component={Landing}/>
+              <Route exact path="/notes" component={DashboardContainer}/>
             </Switch>
           </main>
         </div>
