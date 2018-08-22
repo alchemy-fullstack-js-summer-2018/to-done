@@ -16,7 +16,7 @@ describe('Note Form', () => {
 
     const note = {
       title: 'note1',
-      message: 'finish your lab'
+      content: 'finish your lab'
     };
 
     wrapper.find('input[name="title"]').simulate('change', {
@@ -26,10 +26,10 @@ describe('Note Form', () => {
       }
     });
 
-    wrapper.find('input[name="message"]').simulate('change', {
+    wrapper.find('input[name="content"]').simulate('change', {
       target: {
-        name: 'message',
-        value: note.message
+        name: 'content',
+        value: note.content
       }
     });
 
@@ -51,15 +51,15 @@ describe('Note Form', () => {
 
     const sampleNote = {
       title: 'note1',
-      message: 'hey there'
+      content: 'hey there'
     };
 
     const wrapper = mount(<NoteForm note={sampleNote} onComplete={handleComplete}/>);
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    wrapper.find('input[name="message"]').simulate('change', {
+    wrapper.find('input[name="content"]').simulate('change', {
       target: {
-        name: 'message',
+        name: 'content',
         value: 'finish your lab'
       }
     });
@@ -70,7 +70,7 @@ describe('Note Form', () => {
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual({
       ...sampleNote,
-      message: 'finish your lab'
+      content: 'finish your lab'
     });
 
     return promise

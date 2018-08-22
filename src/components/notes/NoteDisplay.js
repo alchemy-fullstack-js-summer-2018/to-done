@@ -13,7 +13,8 @@ export class NoteDisplay extends Component {
 
     return (
       <p>
-        Title:{note.title}, Message:{note.message}
+        Completed: <input type="checkbox"/> <br/>
+        Title:{note.title}, <br/> Message:{note.content} <br/>
         <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={onDelete}>Delete</button>
       </p>

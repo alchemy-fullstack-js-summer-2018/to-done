@@ -24,14 +24,14 @@ exports[`Note Form renders add if no note prop 1`] = `
       </p>
     </InputControl>
     <InputControl
-      name="message"
+      name="content"
       onChange={[Function]}
       value=""
     >
       <p>
         <label>
           <input
-            name="message"
+            name="content"
             onChange={[Function]}
             required={true}
             value=""
@@ -57,7 +57,7 @@ exports[`Note Form renders add if no note prop 2`] = `
       "calls": Array [
         Array [
           Object {
-            "message": "finish your lab",
+            "content": "finish your lab",
             "title": "note1",
           },
         ],
@@ -91,14 +91,14 @@ exports[`Note Form renders add if no note prop 2`] = `
       </p>
     </InputControl>
     <InputControl
-      name="message"
+      name="content"
       onChange={[Function]}
       value="finish your lab"
     >
       <p>
         <label>
           <input
-            name="message"
+            name="content"
             onChange={[Function]}
             required={true}
             value="finish your lab"
@@ -121,7 +121,7 @@ exports[`Note Form renders edit if there is a note prop 1`] = `
 <NoteForm
   note={
     Object {
-      "message": "hey there",
+      "content": "hey there",
       "title": "note1",
     }
   }
@@ -147,14 +147,14 @@ exports[`Note Form renders edit if there is a note prop 1`] = `
       </p>
     </InputControl>
     <InputControl
-      name="message"
+      name="content"
       onChange={[Function]}
       value="hey there"
     >
       <p>
         <label>
           <input
-            name="message"
+            name="content"
             onChange={[Function]}
             required={true}
             value="hey there"
@@ -177,7 +177,7 @@ exports[`Note Form renders edit if there is a note prop 2`] = `
 <NoteForm
   note={
     Object {
-      "message": "hey there",
+      "content": "hey there",
       "title": "note1",
     }
   }
@@ -186,7 +186,7 @@ exports[`Note Form renders edit if there is a note prop 2`] = `
       "calls": Array [
         Array [
           Object {
-            "message": "finish your lab",
+            "content": "finish your lab",
             "title": "note1",
           },
         ],
@@ -220,14 +220,14 @@ exports[`Note Form renders edit if there is a note prop 2`] = `
       </p>
     </InputControl>
     <InputControl
-      name="message"
+      name="content"
       onChange={[Function]}
       value="finish your lab"
     >
       <p>
         <label>
           <input
-            name="message"
+            name="content"
             onChange={[Function]}
             required={true}
             value="finish your lab"
