@@ -7,10 +7,10 @@ class Note extends Component {
 
   state = {
     editing: false
-  }
+  };
 
   static propTypes = {
-    animal: PropTypes.object.isRequired,
+    note: PropTypes.object.isRequired,
     onRemove: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired
   };
