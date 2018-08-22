@@ -51,3 +51,72 @@ exports[`Note Form renders add if no note prop 1`] = `
   </form>
 </NoteForm>
 `;
+
+exports[`Note Form renders add if no note prop 2`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "message": "finish your lab",
+            "name": "note1",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value="note1"
+    >
+      <p>
+        <label>
+          name
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value="note1"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="message"
+      onChange={[Function]}
+      value="finish your lab"
+    >
+      <p>
+        <label>
+          message
+          <input
+            name="message"
+            onChange={[Function]}
+            required={true}
+            value="finish your lab"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
