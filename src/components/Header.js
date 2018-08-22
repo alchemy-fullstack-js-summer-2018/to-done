@@ -14,7 +14,7 @@ class Header extends Component {
   };
 
   render()  {
-    
+
     return (
       <div className={styles.header}>
       
@@ -24,10 +24,10 @@ class Header extends Component {
           <nav>
             <ul>
               <li>
-                <NavLink exact activeClassName="active" to="/">Home</NavLink>
+                <NavLink exact activeClassName="active" to="/">Landing</NavLink>
               </li>
               <li>
-                <NavLink exact activeClassName="active" to="/list">Task List</NavLink> 
+                <NavLink exact activeClassName="active" to="/dashboard">Dashboard</NavLink> 
               </li>
           
             </ul>
