@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Notes from './Notes';
-import NoteForm from './NotesForm';
+import NoteForm from './NoteForm';
 import {
   getNotes,
   addNote,
@@ -10,7 +10,8 @@ import {
 class NotesContainer extends Component {
 
   state = {
-    notes: null
+    // notes: null,
+    notes: []
   };
 
   componentDidMount() {
