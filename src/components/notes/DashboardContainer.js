@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Dashboard from './Dashboard.js';
 
 class DashboardContainer extends Component {
   render() {
     return (
-      <h2>Dashboard Container</h2>
+      <section>
+        <Dashboard/>
+      </section>
     );
   }
 }
