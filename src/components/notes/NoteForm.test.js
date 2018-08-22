@@ -14,7 +14,8 @@ describe('Note form', () => {
 
     const note = {
       title: 'Get veggies',
-      content: 'Get some veggies'
+      content: 'Get some veggies',
+      completed: false
     };
 
     wrapper.find('input[name="title"]').simulate('change', {
@@ -31,12 +32,25 @@ describe('Note form', () => {
       }
     });
 
+    wrapper.find('input[name="completed"]').simulate('change', {
+      target: {
+        name: 'completed',
+        value: note.completed
+      }
+    });
+
     wrapper.find('button').simulate('submit');
 
-    // const calls = handleComplete.mock.calls;
-    // expect(calls.length).toBe(1);
-    // expect(calls[0][0]).toEqual(note);
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual(note);
 
     expect(toJSON(wrapper)).toMatchSnapshot();
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
   });
 });

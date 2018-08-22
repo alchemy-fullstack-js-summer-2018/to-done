@@ -9,12 +9,13 @@ class NoteDisplay extends Component {
   
   render() {
     const { note } = this.props;
-    
+
     return (
-      <p>
-        {note.title} the {note.content}
-        More placeholder
-      </p>
+      <div>
+        <h3>{note.title}</h3>
+        <p>{note.content}</p>
+        <p>Completed? {note.completed}</p>
+      </div>
     );
   }
 }

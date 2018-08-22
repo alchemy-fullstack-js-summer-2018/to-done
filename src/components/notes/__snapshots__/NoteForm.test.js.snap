@@ -4,9 +4,12 @@ exports[`Note form renders add if no note prop 1`] = `
 <NoteForm
   onComplete={[MockFunction]}
 >
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <InputControl
       name="title"
+      onChange={[Function]}
       value=""
     >
       <p>
@@ -15,6 +18,7 @@ exports[`Note form renders add if no note prop 1`] = `
           :
           <input
             name="title"
+            onChange={[Function]}
             required={true}
             value=""
           />
@@ -23,6 +27,7 @@ exports[`Note form renders add if no note prop 1`] = `
     </InputControl>
     <InputControl
       name="content"
+      onChange={[Function]}
       value=""
     >
       <p>
@@ -31,6 +36,7 @@ exports[`Note form renders add if no note prop 1`] = `
           :
           <input
             name="content"
+            onChange={[Function]}
             required={true}
             value=""
           />
@@ -38,6 +44,7 @@ exports[`Note form renders add if no note prop 1`] = `
       </p>
     </InputControl>
     <input
+      checked={false}
       name="completed"
       type="checkbox"
       value={false}
@@ -46,7 +53,7 @@ exports[`Note form renders add if no note prop 1`] = `
       <button
         type="submit"
       >
-        Placeholder
+        Add
       </button>
     </p>
   </form>
@@ -55,12 +62,33 @@ exports[`Note form renders add if no note prop 1`] = `
 
 exports[`Note form renders add if no note prop 2`] = `
 <NoteForm
-  onComplete={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "Get some veggies",
+            "title": "Get veggies",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
 >
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <InputControl
       name="title"
-      value=""
+      onChange={[Function]}
+      value="Get veggies"
     >
       <p>
         <label>
@@ -68,15 +96,17 @@ exports[`Note form renders add if no note prop 2`] = `
           :
           <input
             name="title"
+            onChange={[Function]}
             required={true}
-            value=""
+            value="Get veggies"
           />
         </label>
       </p>
     </InputControl>
     <InputControl
       name="content"
-      value=""
+      onChange={[Function]}
+      value="Get some veggies"
     >
       <p>
         <label>
@@ -84,13 +114,15 @@ exports[`Note form renders add if no note prop 2`] = `
           :
           <input
             name="content"
+            onChange={[Function]}
             required={true}
-            value=""
+            value="Get some veggies"
           />
         </label>
       </p>
     </InputControl>
     <input
+      checked={false}
       name="completed"
       type="checkbox"
       value={false}
@@ -99,7 +131,85 @@ exports[`Note form renders add if no note prop 2`] = `
       <button
         type="submit"
       >
-        Placeholder
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note form renders add if no note prop 3`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "Get some veggies",
+            "title": "Get veggies",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Get veggies"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Get veggies"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Get some veggies"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Get some veggies"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      checked={false}
+      name="completed"
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Add
       </button>
     </p>
   </form>
