@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class NoteForm extends Component {
 
@@ -7,38 +7,69 @@ class NoteForm extends Component {
     editing: false,
     title: '',
     content: '',
+    key: null,
     completed: false
   };
 
-  componentDidMount() {
-    console.log('mounted!');
+  static propTypes = {
+    note: PropTypes.object,
+    onComplete: PropTypes.func.isRequired
   }
+
+  componentDidMount() {
+    const { note } = this.props;
+    if(!note) return;
+    this.setState(note);
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { title, content, completed, key } = this.state;
+    const note = { title, content, completed };
+    if(!key) note.key = key;
+
+    this.props.onComplete(note)
+      .then(() => {
+        if(!key) return;
+        this.setState({ title: '', content: '' });
+      });
+  };
 
   render() {
     const { title, content } = this.state;
 
     return (
 
-      <form>
-        <InputControl name="title" value={title}/>
-        <InputControl name="content" value={content}/>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Title:&nbsp;
+          <input name="title" value={title} onChange={this.handleChange}></input>
+        </label>
+        <br/>
+        <label>
+          Content:&nbsp;<br/>
+          <textarea type="text" name="content" value={content} rows="3" cols="40" onChange={this.handleChange}></textarea>
+        </label>
         <p>
           <button type="submit">Submit</button>
         </p>
-
       </form>
     );
   }
 }
 
-const InputControl = (props) => (
+// const InputControl = (props) => (
 
-  <p>
-    <label>
-      {props.name}:
-      <input {...props} required/>
-    </label>
-  </p>
-);
+//   <p>
+//     <label>
+//       {props.name}:
+//       <input {...props} required/>
+//     </label>
+//   </p>
+// );
 
 export default NoteForm;
