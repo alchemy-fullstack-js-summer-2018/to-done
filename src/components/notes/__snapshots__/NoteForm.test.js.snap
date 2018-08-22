@@ -326,3 +326,106 @@ exports[`Note Form renders edit if is note prop 1`] = `
   </form>
 </NoteForm>
 `;
+
+exports[`Note Form renders edit if is note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "sunday",
+      "key": "abc",
+      "title": "wash car",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "sunday",
+            "key": "abc",
+            "title": "wash car",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="completed"
+      onChange={[Function]}
+      value={false}
+    >
+      <p>
+        <label>
+          :
+          <input
+            name="completed"
+            onChange={[Function]}
+            required={true}
+            value={false}
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;

@@ -3,7 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-describe.only('Note Form', () => {
+describe('Note Form', () => {
 
   it('renders add if no note prop', () => {
 
@@ -81,8 +81,10 @@ describe.only('Note Form', () => {
       content: 'sunday'
     });
 
-    wrapper.find('button[type="button"]').simulate('click');
-
-    expect(handleCancel.mock.calls.length).toBe(1);
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
   });
 });
