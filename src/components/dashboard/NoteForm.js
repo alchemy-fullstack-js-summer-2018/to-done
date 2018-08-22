@@ -7,6 +7,7 @@ class NoteForm extends Component {
     editing: false,
     title: '',
     content:'',
+    completed: false,
     key: null
   };
 
