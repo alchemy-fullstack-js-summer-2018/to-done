@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notes test renders add if no note prop 1`] = `
+<ul>
+  <Note
+    key="abc"
+    note={
+      Object {
+        "key": "abc",
+        "name": "Nissan",
+        "type": "Car Bio",
+      }
+    }
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+  <Note
+    key="def"
+    note={
+      Object {
+        "key": "def",
+        "name": "Top Gear",
+        "type": "Show",
+      }
+    }
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+  <Note
+    key="ghi"
+    note={
+      Object {
+        "key": "ghi",
+        "name": "KOF",
+        "type": "Video Game",
+      }
+    }
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+</ul>
+`;

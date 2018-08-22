@@ -2,7 +2,7 @@ import Note from './Note';
 import React from 'react';
 import { shallow } from 'enzyme';
 
-describe.skip('Note', () => {
+describe('Note', () => {
 
   it('Renders display or edit', () => {
     const handleRemove = jest.fn();
@@ -17,11 +17,11 @@ describe.skip('Note', () => {
 
     const component = wrapper.instance();
 
-    // expect(wrapper.state('editing')).toBe(false);
-    // component.handleEdit();
-    // expect(wrapper.state('editing')).toBe(true);
-    // component.handleEndEdit();
-    // expect(wrapper.state('editing')).toBe(false);
+    expect(wrapper.state('editing')).toBe(false);
+    component.handleEdit();
+    expect(wrapper.state('editing')).toBe(true);
+    component.handleEndEdit();
+    expect(wrapper.state('editing')).toBe(false);
 
     component.handleDelete();
 

@@ -10,23 +10,27 @@ class Note extends Component {
   };
 
   static propTypes = {
-    note: PropTypes.object.isRequired
+    note: PropTypes.object.isRequired,
+    onRemove: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired
   };
 
   handleEdit = () => {
-    
+    this.setState({ editing: true });
   };
 
   handleDelete = () => {
-
+    const { note, onRemove } = this.props;
+    return onRemove(note.key);
   };
 
-  handleComplete = () => {
-
+  handleComplete = note => {
+    const { onUpdate } = this.props;
+    return onUpdate(note).then(this.handleEdit);
   };
 
   handleEndEdit = () => {
-
+    this.setState({ editing: false });
   };
 
   render() {
