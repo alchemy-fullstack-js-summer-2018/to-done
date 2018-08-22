@@ -13,6 +13,37 @@ describe('Note form', () => {
     const wrapper = mount(<NoteForm onComplete={handleComplete}/>);
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    
+    const note = {
+      title: 'ACL',
+      content: 'Reacting to React',
+      completed: false
+    };
+
+    wrapper.find('input[name="title"]').simulate('change', {
+      target: {
+        name: 'title',
+        value: note.title
+      }
+    });
+
+    wrapper.find('textarea[name="content"]').simulate('change', {
+      target: {
+        name: 'content',
+        value: note.content
+      }
+    });
+
+    wrapper.find('button').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual(note);
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
   });
 });

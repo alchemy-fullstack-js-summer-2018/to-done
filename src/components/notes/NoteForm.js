@@ -30,7 +30,7 @@ class NoteForm extends Component {
     event.preventDefault();
     const { title, content, completed, key } = this.state;
     const note = { title, content, completed };
-    if(!key) note.key = key;
+    if(key) note.key = key;
 
     this.props.onComplete(note)
       .then(() => {
@@ -52,7 +52,7 @@ class NoteForm extends Component {
         <br/>
         <label>
           Content:&nbsp;<br/>
-          <textarea type="text" name="content" value={content} rows="3" cols="40" onChange={this.handleChange}></textarea>
+          <textarea name="content" value={content} rows="3" cols="40" onChange={this.handleChange}></textarea>
         </label>
         <p>
           <button type="submit">Submit</button>
