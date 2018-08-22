@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note form renders add if no note prop 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <form>
+    <InputControl
+      name="title"
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      name="completed"
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Placeholder
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note form renders add if no note prop 2`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <form>
+    <InputControl
+      name="title"
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      name="completed"
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Placeholder
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
