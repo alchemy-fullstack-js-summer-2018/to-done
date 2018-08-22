@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NoteForm from  './NoteForm';
 import styles from './Notes.css';
+import { addNote, getNotes/* , updateNote, removeNote */ } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
 
@@ -10,19 +11,32 @@ class DashboardContainer extends Component {
 
   componentDidMount() {
     console.log('component did mount!');
+    getNotes()
+      .then(notes => {
+        this.setState({ notes });
+      });
   }
 
-  addNote(note) {
+  handleAddNote = note => {
     console.log('note added', note);
-  }
+    return addNote(note)
+      .then(added => {
+        this.setState(({ notes }) => {
+          return {
+            notes: [...notes, added]
+          };
+        });
+      });
+  };
 
   render() {
+    const { notes } = this.state;
 
     return (
       <div className={styles.notes}>
         <h2>Welcome to the Dashboard!</h2>
 
-        <NoteForm/>
+        <NoteForm onComplete={this.handleAddNote}/>
       </div>
     );
   }
