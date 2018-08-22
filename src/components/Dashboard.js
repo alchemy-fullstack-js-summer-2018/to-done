@@ -4,7 +4,7 @@ import {
   getNotes, 
   addNote,
   updateNote,
-  removeNote } from '../../services/notesApi';
+  removeNote } from '../services/notesApi';
 
 class Dashboard extends Component {
 
