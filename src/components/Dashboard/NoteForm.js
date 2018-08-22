@@ -12,8 +12,16 @@ class NoteForm extends Component {
 
   static propTypes = {
     note: PropTypes.object,
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
   };
+
+  componentDidMount() {
+    const { note } = this.props;
+    if(!note) return;
+
+    this.setState(note);
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -33,16 +41,19 @@ class NoteForm extends Component {
   };
 
   render() {
+    const { key, title, notes, completed } = this.state;
+    const { onCancel } = this.props;
 
     return (
       <div>
         <h3>I am the note form</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Title:<input type="text" name="title" onChange={this.handleChange}></input></label>
-          <label>Notes:<textarea rows="4" cols="50" name="notes" onChange={this.handleChange}></textarea></label>
-          <label>Completed:<input type="checkbox" name="completed" onChange={this.handleChange}></input></label>
+          <label>Title:<input type="text" name="title" value={title} onChange={this.handleChange}></input></label>
+          <label>Notes:<textarea rows="4" cols="50" name="notes" value={notes} onChange={this.handleChange}></textarea></label>
+          <label>Completed:<input type="checkbox" name="completed" value={completed} onChange={this.handleChange}></input></label>
           <p>
             <button type="submit">Submit</button>
+            {key && <button type="button" onClick={onCancel}>Cancel</button>}
           </p>
         </form>
       </div>

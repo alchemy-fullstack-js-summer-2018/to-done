@@ -100,4 +100,49 @@ describe('Note Form', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
   });
+
+  it('renders edit if note prop', () => {
+    const handleComplete = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+    const handleCancel = jest.fn();
+
+    
+    const note = {
+      key: '4',
+      title: 'finish this lab',
+      notes: 'you can do it!',
+      completed: false
+    };
+
+    const wrapper = mount(<NoteForm 
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+    
+    wrapper.find('input[name="completed"]').simulate('change', {
+      target: {
+        name: 'completed',
+        value: 'true'
+      }
+    });
+
+    wrapper.find('button').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual({
+      ...note,
+      completed: true 
+    });
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
+  });  
 });

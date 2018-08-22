@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-describe.only('Note List', () => {
+describe('Note List', () => {
 
   it('renders as expected', () => {
     const notes = [
