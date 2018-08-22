@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Notes from './Notes';
+import NoteList from './NoteList';
 import NoteForm from './NoteForm';
 import {
   getNotes,
@@ -31,11 +31,49 @@ export class DashboardContainer extends Component {
       });
   };
 
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.map(note => note.key === updated.key ? updated : note)
+          };
+        });
+      });
+  }
+
+  handleRemove = key => {
+    return removeNote(key)
+      .then(() => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.filter(note => note.key !== key)
+          };
+        });
+      });
+  };
+
   render() {
+    const { notes } = this.state;
+
     return (
       <div>
-        <h3>Add a note!</h3>
-        <NoteForm onComplete={this.handleAdd}/>
+        <section>
+          <h3>Add a note!</h3>
+          <NoteForm onComplete={this.handleAdd}/>
+        </section>
+
+        {notes && 
+          <section>
+            <h3>Notes</h3>
+            <NoteList
+              notes={notes}
+              onUpdate={this.handleUpdate}
+              onRemove={this.handleRemove}
+            />
+          </section>
+
+        }
       </div>
     );
   }
