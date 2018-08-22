@@ -33,8 +33,8 @@ class NoteForm extends Component {
     if(key) note.key = key;
 
     this.props.onComplete(note)
-      .then(() => {
-        if(key) return;
+      .then(note => {
+        if(key || !note.key) return;
         this.setState({ title: '', content: '' });
       });
   };
