@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
+import Header from './Header';
+
 
 class App extends Component {
 
@@ -11,7 +13,7 @@ class App extends Component {
       <Router>
         <div >
           <header>
-            
+            <Header/>
           </header>
           
           <main>

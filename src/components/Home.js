@@ -5,8 +5,8 @@ class Home extends Component {
     return (
       <div>
         <h2> Notes Home Page</h2>
-        <p>This is a notes app that manages a list of To Dos.</p>
-        <p>It allows you to add and delete notes.</p> 
+        <p>This app helps user manage a list of To Dos. It can add new notes items and delete completed ones.</p>
+       
       </div>    
     );
   }
