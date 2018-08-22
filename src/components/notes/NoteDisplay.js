@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NoteDisplay extends Component {
+  static propTypes = {
+    note: PropTypes.object.isRequired
+  };
+
   render() {
+    const { note } = this.props;
+
     return (
       <div>
-        <h4>TITLE</h4>
-        <p>content</p>
+        <h4>{note.title}</h4>
+        <p>{note.content}</p>
         <input type="checkbox"/>
       </div>
     );

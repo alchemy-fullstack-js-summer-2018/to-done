@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Notes from './Notes.js';
 import NoteForm from './NoteForm.js';
 
 class Dashboard extends Component {
-  state = {
-    notes: null
+  
+  static propTypes = {
+    notes: PropTypes.arrayOf(Object),
+    onAdd: PropTypes.func.isRequired
   };
-
-  componentDidMount() {
-    console.log('getting notes...');
-  }
-
+  
   render() {
-
+    const { notes, onAdd } = this.props;
     return (
       <div>
         <h3>Dashboard</h3>
         <section>
-          <NoteForm/>
+          <NoteForm onComplete={onAdd}/>
         </section>
-        <section>
-          <Notes/>
-        </section>
+        {notes &&
+          <section>
+            <h3>Lots o Notes</h3>
+            <Notes notes={notes}/>
+          </section>
+        }
       </div>
     );
   }
