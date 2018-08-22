@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700');
+
+@font-face {
+  font-family: 'Comfortaa', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Comfortaa:700');
+}
+
+h1 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 60px;
+  color: rebeccapurple;
+  text-decoration-line: line-through;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  color: #FFF;
+}
+
