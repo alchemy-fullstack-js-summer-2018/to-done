@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Notes from './Notes';
 import NoteForm from './NoteForm';
-// import { 
-//   getAnimals, 
-//   addAnimal, 
-//   updateAnimal, 
-//   removeAnimal } from '../../services/animalsApi';
+import { getNotes, addNote } from '../../services/notesApi';
 
 class NotesContainer extends Component {
 
@@ -14,12 +10,22 @@ class NotesContainer extends Component {
   };
 
   componentDidMount() {
-
+    getNotes()
+      .then(notes => {
+        this.setState({ notes });
+      });
   }
 
-  // handleAdd = note => {
-
-  // };
+  handleAdd = note => {
+    return addNote(note)
+      .then(added => {
+        this.setState(({ notes }) => {
+          return {
+            notes: [...notes, added]
+          };
+        });
+      });
+  };
 
   // handleUpdate = note => {
 

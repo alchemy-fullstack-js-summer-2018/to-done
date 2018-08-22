@@ -4,7 +4,7 @@ class Home extends Component {
     return (
       <div>
         <h2>Home Page</h2>
-        <p>edit lists of notes</p>
+        <p>Edit your list of notes</p>
       </div>
     );
   }
