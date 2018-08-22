@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-// import Landing from './Landing/Landing';
+import Landing from './Landing/Landing';
 import styles from './App.css';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
 
           <main>
             <Switch>
-              <Route exact path="/"/*  component={Landing} *//>
+              <Route exact path="/" component={Landing}/>
               <Redirect to="/"/>
             </Switch>
           </main>
