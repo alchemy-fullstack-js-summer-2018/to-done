@@ -1,5 +1,4 @@
 /* eslint-env node */
-/* eslint-env node */
 module.exports = {
   roots: ['..'],
   setupTestFrameworkScriptFile: '<rootDir>/enzyme.setup.js',

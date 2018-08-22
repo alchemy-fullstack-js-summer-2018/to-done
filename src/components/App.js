@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Header from './Header';
-import Home from './/Home';
+//import Header from './Header';
+import Home from './Home';
 import styles from './App.css';
 
 class App extends Component {
@@ -11,14 +11,11 @@ class App extends Component {
     return (
       <Router>
         <div className={styles.app}>
-          <header>
-            <Header/>
-          </header>
+          <h1>I App.js</h1>
       
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route exact path="/search" component={Container}/>
               <Redirect to="/"/>
             </Switch> 
           </main>
