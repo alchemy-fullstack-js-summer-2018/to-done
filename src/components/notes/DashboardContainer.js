@@ -34,9 +34,9 @@ class DashboardContainer extends Component {
   handleUpdate = note => {
     return updateNote(note)
       .then(updated => {
-        this.setState(({ notes }) => {
+        this.setState(({ noteList }) => {
           return {
-            notes: notes.map(note => note.key === updated.key ? updated : note)
+            noteList: noteList.map(note => note.key === updated.key ? updated : note)
           };
         });
       });

@@ -16,7 +16,10 @@ class NoteDisplay extends Component {
       <div>
         <h3>{note.title}</h3>
         <p>{note.content}</p>
-        <p>Completed? {note.completed}</p>
+        {note.completed
+          ? <p>Completed!</p>
+          : <p>Not completed</p>
+        }
         <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={onDelete}>delete</button>
       </div>

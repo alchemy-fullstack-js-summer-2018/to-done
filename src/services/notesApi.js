@@ -1,6 +1,6 @@
 import { put, post, get, del } from './request';
 
-const URL = 'https://react-search-e534c.firebaseio.com/';
+const URL = 'https://react-search-e534c.firebaseio.com';
 const NOTES_URL = `${URL}/notes`;
 
 const getNoteUrl = key => `${NOTES_URL}/${key}.json`;
@@ -28,7 +28,7 @@ export const addNote = note => {
 };
 
 export const updateNote = note => {
-  const url = `${NOTES_URL}.json`;
+  const url = getNoteUrl(note.key);
   return put(url, note);
 };
 

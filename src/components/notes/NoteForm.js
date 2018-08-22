@@ -48,7 +48,8 @@ class NoteForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <InputControl name="title" value={title} onChange={this.handleChange}/>
         <InputControl name="content" value={content} onChange={this.handleChange}/>
-        <input name="completed" value={completed} type="checkbox" checked={completed} onChange={this.handleChange}/>
+        <label>Completed? </label>
+        <input name="completed" value={completed} type="checkbox" onChange={this.handleChange}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
           {key && <button type="button" onClick={onCancel}>Cancel</button>}
