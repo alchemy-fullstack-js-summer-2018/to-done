@@ -26,3 +26,13 @@ export const addNote = note => {
       return note;
     });
 };
+
+export const updateNote = note => {
+  const url = getNoteUrl(note.key);
+  return put(url, note);
+};
+
+export const removeNote = note => {
+  const url = getNoteUrl(note.key);
+  return del(url, note);
+};

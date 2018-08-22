@@ -5,11 +5,12 @@ import Note from './Note.js';
 class Notes extends Component {
 
   static propTypes = {
-    notes: PropTypes.arrayOf(Object),
+    notes: PropTypes.arrayOf(Object).isRequired,
+    onUpdate: PropTypes.func.isRequired
   };
 
   render() {
-    const { notes } = this.props;
+    const { notes, onUpdate } = this.props;
 
     return (
       <div>
@@ -18,6 +19,7 @@ class Notes extends Component {
             <Note
               key={note.key}
               note={note}
+              onUpdate={onUpdate}
             />
 
           ))}

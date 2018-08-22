@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 class NoteForm extends Component {
   state = {
-    editing: false,
     key: null,
     title: '',
-    content: ''
+    content: '',
+    completed: false
   };
 
   static propTypes = {
@@ -15,32 +15,32 @@ class NoteForm extends Component {
     onCancel: PropTypes.func
   };
 
+  componentDidMount() {
+    const { note } = this.props;
+    if(!note) return;
+    this.setState(note);
+  }
+
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, content, key } = this.state;
+    const { title, content, key, completed } = this.state;
     if(!title) return;
-    const note = { title, content };
+    const note = { title, content, completed };
     if(key) note.key = key;
-    console.log(note);
-    this.props.onComplete(note)
-      .then(() => {
-        if(!key) return;
-        this.setState({ title: '', content: '' });
-      });
+    this.props.onComplete(note);
   };
 
   render() {
-    const { editing, title, content } = this.state;
+    const { key, title, content } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit}>
-        {editing ?
-          <p>Editing Note</p>
-          : <p>Adding New Note</p>
+        {!key &&
+          <h3>Adding New Note</h3>
         }
         <input name="title" value={title} onChange={this.handleChange}/>
         <textarea name="content" rows="2" cols="30" value={content} onChange={this.handleChange}/>

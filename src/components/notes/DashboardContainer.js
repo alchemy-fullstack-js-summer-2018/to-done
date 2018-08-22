@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Dashboard from './Dashboard.js';
 import {
   getNotes,
-  addNote
+  addNote,
+  updateNote,
+  removeNote
 } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
@@ -23,12 +25,27 @@ class DashboardContainer extends Component {
       });
   };
 
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => ({
+          notes: notes.map(n => n.key === updated.key ? updated : n)
+        }));
+        console.log(this.state.notes);
+      });
+  };
+
+
   render() {
     const { notes } = this.state;
     
     return (
       <section>
-        <Dashboard onAdd={this.handleAdd} notes={notes}/>
+        <Dashboard
+          notes={notes}
+          onAdd={this.handleAdd}
+          onUpdate={this.handleUpdate}
+        />
       </section>
     );
   }

@@ -9,7 +9,16 @@ class Note extends Component {
   };
 
   static propTypes = {
-    note: PropTypes.object.isRequired
+    note: PropTypes.object.isRequired,
+    onUpdate: PropTypes.func.isRequired
+  };
+
+  handleEdit = () => this.setState(({ editing }) => ({ editing: !editing }));
+
+  handleComplete = note => {
+    const { onUpdate } = this.props;
+    console.log('updating', note);
+    return onUpdate(note).then(this.handleEdit);
   };
 
   render() {
@@ -19,9 +28,14 @@ class Note extends Component {
     return (
       <li>
         {editing 
-          ? <NoteForm/>
+          ? <NoteForm
+            note={note}
+            onComplete={this.handleComplete}
+            onCancel={this.handleEdit}
+          />
           : <NoteDisplay
             note={note}
+            onEdit={this.handleEdit}
           />
         
         }
