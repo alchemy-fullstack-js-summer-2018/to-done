@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NoteDisplay from './NoteDisplay';
 import PropTypes from 'prop-types';
 
 class Note extends Component {
@@ -14,6 +15,7 @@ class Note extends Component {
       <li>
         <h4>Note</h4>
         {note}
+        <NoteDisplay />
       </li>
     );
   }
