@@ -52,4 +52,52 @@ describe('Note Form', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
   });
+
+  it('renders correct input on add', () => {
+    const handleComplete = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+
+    const wrapper = mount(<NoteForm onComplete={handleComplete}/>);
+    expect(toJSON(wrapper)).toMatchSnapshot();
+
+    const note = {
+      title: 'finish this lab',
+      notes: 'you can do it!',
+      completed: false
+    };
+
+    wrapper.find('input[name="title"]').simulate('change', {
+      target: {
+        name: 'title',
+        value: 'finish this lab'
+      }
+    });
+
+    wrapper.find('textarea[name="notes"]').simulate('change', {
+      target: {
+        name: 'notes',
+        value: 'you can do it!'
+      }
+    });
+
+    wrapper.find('input[name="completed"]').simulate('change', {
+      target: {
+        name: 'completed',
+        value: false
+      }
+    });
+
+    wrapper.find('button').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual(note);
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
+  });
 });

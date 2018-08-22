@@ -113,3 +113,117 @@ exports[`Note Form renders add if no note prop 2`] = `
   </div>
 </NoteForm>
 `;
+
+exports[`Note Form renders correct input on add 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <div>
+    <h3>
+      I am the note form
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Title:
+        <input
+          name="title"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <label>
+        Notes:
+        <textarea
+          cols="50"
+          name="notes"
+          onChange={[Function]}
+          rows="4"
+        />
+      </label>
+      <label>
+        Completed:
+        <input
+          name="completed"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+      <p>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </p>
+    </form>
+  </div>
+</NoteForm>
+`;
+
+exports[`Note Form renders correct input on add 2`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "notes": "you can do it!",
+            "title": "finish this lab",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <div>
+    <h3>
+      I am the note form
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Title:
+        <input
+          name="title"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <label>
+        Notes:
+        <textarea
+          cols="50"
+          name="notes"
+          onChange={[Function]}
+          rows="4"
+        />
+      </label>
+      <label>
+        Completed:
+        <input
+          name="completed"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+      <p>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </p>
+    </form>
+  </div>
+</NoteForm>
+`;
