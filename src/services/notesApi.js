@@ -1,9 +1,9 @@
-import { post, get } from './request';
+import { post, get, put } from './request';
 
 const URL = 'https://to-done-df382.firebaseio.com';
 const NOTES_URL = `${URL}/notes`;
 
-// const getNoteUrl = key => `${NOTES_URL}/${key}.json`;
+const getNoteUrl = key => `${NOTES_URL}/${key}.json`;
 
 export const getNotes = () => {
   return get(`${NOTES_URL}.json`)
@@ -26,4 +26,9 @@ export const addNotes = note => {
       note.key = res.name;
       return note;
     });
+};
+
+export const updateNote = note => {
+  const url = getNoteUrl(note.key);
+  return put(url, note);
 };

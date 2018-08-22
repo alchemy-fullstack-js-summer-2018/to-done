@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class NoteForm extends Component {
 
   state = {
-    completed: false,
+    editing: false,
     title: '',
     content:'',
     key: null
@@ -42,6 +42,7 @@ class NoteForm extends Component {
   render() {
 
     const { key, title, content } = this.state;
+    const { onCancel } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -49,6 +50,7 @@ class NoteForm extends Component {
         <InputControl name="content" value={content} onChange={this.handleChange}/>
         <p>
           <button type="submit">{key ? 'Update' : 'Add'}</button>
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );

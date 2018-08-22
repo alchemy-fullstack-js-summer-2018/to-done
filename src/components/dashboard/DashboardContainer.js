@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import NoteForm from './NoteForm';
-import { getNotes, addNotes } from '../../services/notesApi';
+import NoteList from './NoteList';
+import { getNotes, addNotes, updateNote } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
 
   state = {
-    notes: []
+    notes: null
   };
+  
+  componentDidMount() {
+    getNotes()
+      .then(notes => {
+        this.setState({ notes });
+      });
+  }
 
   handleAdd = note => {
     return addNotes(note)
@@ -19,8 +27,20 @@ class DashboardContainer extends Component {
       });
   };
 
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.map(note => note.key === updated.key ? updated : note)
+          };
+        });
+      });
+  };
+
   render() {
-    // const { notes } = this.state;
+
+    const { notes } = this.state;
 
     return (
       <div>
@@ -29,16 +49,16 @@ class DashboardContainer extends Component {
           <NoteForm onComplete={this.handleAdd}/>
         </section>
 
-        {/* {notes &&
+        {notes &&
         <section>
           <h3>Notes</h3>
-          <Notes
+          <NoteList
             notes={notes}
             onUpdate={this.handleUpdate}
-            onRemove={this.handleRemove}
+            // onRemove={this.handleRemove}
           />
         </section>
-        } */}
+        }
       </div>
     );
   }
