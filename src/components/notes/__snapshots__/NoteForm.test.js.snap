@@ -46,6 +46,7 @@ exports[`Note form renders add if no note prop 1`] = `
     <input
       checked={false}
       name="completed"
+      onChange={[Function]}
       type="checkbox"
       value={false}
     />
@@ -124,6 +125,7 @@ exports[`Note form renders add if no note prop 2`] = `
     <input
       checked={false}
       name="completed"
+      onChange={[Function]}
       type="checkbox"
       value={false}
     />
@@ -202,6 +204,7 @@ exports[`Note form renders add if no note prop 3`] = `
     <input
       checked={false}
       name="completed"
+      onChange={[Function]}
       type="checkbox"
       value={false}
     />
@@ -210,6 +213,177 @@ exports[`Note form renders add if no note prop 3`] = `
         type="submit"
       >
         Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note form renders edit if there is note prop 1`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "yup",
+      "key": "abc",
+      "title": "get stuff",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="get stuff"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="get stuff"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="yup"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="yup"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      checked={false}
+      name="completed"
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note form renders edit if there is note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "yup",
+      "key": "abc",
+      "title": "get stuff",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": true,
+            "content": "yup",
+            "key": "abc",
+            "title": "get stuff",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      checked={false}
+      name="completed"
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
       </button>
     </p>
   </form>
