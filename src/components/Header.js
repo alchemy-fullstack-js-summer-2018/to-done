@@ -13,12 +13,12 @@ class Header extends Component {
     return (
       <div className={styles.header}>
       
-        <section>
+        <section className="header-container">
           <div className="logo">
             <h1>Notes</h1>
           </div>
 
-          <nav>
+          <nav className="nav-link">
             <ul>
               <li>
                 <NavLink exact activeClassName="active" to="/">Home</NavLink>

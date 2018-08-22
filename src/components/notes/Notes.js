@@ -14,7 +14,7 @@ class Notes extends Component {
     const { notes, onUpdate, onRemove } = this.props;
 
     return (
-      <ul>
+      <ul className="notes-container">
         {notes.map(note => (
           <Note 
             key={note.key} 

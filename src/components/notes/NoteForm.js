@@ -45,7 +45,7 @@ class NoteForm extends Component {
     const { onCancel } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="note-form" onSubmit={this.handleSubmit}>
         <InputControl name="name" value={name} onChange={this.handleChange}/>
         <InputControl name="type" value={type} onChange={this.handleChange}/>
         <p>

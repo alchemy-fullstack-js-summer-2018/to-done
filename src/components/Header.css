@@ -1,0 +1,40 @@
+:local(.header) {
+    background-color: lightskyblue;
+    padding: 10px;
+
+  .header-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    justify-content: flex-end;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 14pt;
+      padding-top: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      padding: 5px;
+    }
+  }
+}
