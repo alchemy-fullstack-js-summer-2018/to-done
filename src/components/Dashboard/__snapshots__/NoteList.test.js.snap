@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note List renders as expected 1`] = `
+<ul>
+  <Note
+    key="1"
+    note={
+      Object {
+        "completed": false,
+        "key": "1",
+        "notes": "Finish egg chapter in the Measure of my Powers",
+        "title": "Read",
+      }
+    }
+  />
+  <Note
+    key="2"
+    note={
+      Object {
+        "completed": false,
+        "key": "2",
+        "notes": "eggs, butter, sea salt, heirloom tomatoes",
+        "title": "Grocery Shopping",
+      }
+    }
+  />
+  <Note
+    key="3"
+    note={
+      Object {
+        "completed": false,
+        "key": "3",
+        "notes": "Seriously, wash it already!",
+        "title": "Wash Car",
+      }
+    }
+  />
+</ul>
+`;
