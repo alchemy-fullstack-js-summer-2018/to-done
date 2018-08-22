@@ -14,8 +14,9 @@ class Note extends Component {
     return (
       <li>
         <h4>Note</h4>
-        {note}
-        <NoteDisplay />
+        <NoteDisplay 
+          note={note}
+        />
       </li>
     );
   }
