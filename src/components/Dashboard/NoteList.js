@@ -10,19 +10,17 @@ class NoteList extends Component {
 
   render() {
     const { notes } = this.props;
+    if(!notes) return null;
 
     return (
-      <div>
-        <h3>I am the Note List</h3>
-        <ul>
-          {notes.map(note => (
-            <Note
-              key={note.key}
-              note={note}
-            />
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {notes.map(note => (
+          <Note
+            key={note.key}
+            note={note}
+          />
+        ))}
+      </ul>
     );
   }
 }

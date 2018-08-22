@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Form renders add if no note prop 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <div>
+    <h3>
+      I am the note form
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Title:
+        <input
+          name="title"
+          type="text"
+        />
+      </label>
+      <label>
+        Notes:
+        <textarea
+          cols="50"
+          name="notes"
+          rows="4"
+        />
+      </label>
+      <p>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </p>
+    </form>
+  </div>
+</NoteForm>
+`;

@@ -31,19 +31,23 @@ class DashboardContainer extends Component {
   };
 
   render() {
-    // const { notes } = this.state;
+    const { notes } = this.state;
 
     return (
       <div className={styles.notes}>
         <h2>Welcome to the Dashboard!</h2>
-        
+
         <section>
           <NoteForm onComplete={this.handleAddNote}/>
         </section>
 
-        <section>
-          <NoteList />
-        </section>
+        {notes &&
+          <section>
+            <NoteList 
+              notes={notes}
+            />
+          </section>
+        }
       </div>
     );
   }
