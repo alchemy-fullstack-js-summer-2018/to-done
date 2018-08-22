@@ -14,6 +14,7 @@ class Note extends Component {
   };
 
   handleEdit = () => this.setState(({ editing }) => ({ editing: !editing }));
+
   handleCheckChange = note => {
     const { onUpdate } = this.props;
     const { completed } = note;

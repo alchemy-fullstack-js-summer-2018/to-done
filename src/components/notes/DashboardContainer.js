@@ -3,7 +3,7 @@ import Dashboard from './Dashboard.js';
 import {
   getNotes,
   addNote,
-  updateNote
+  updateNote,
 } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
@@ -20,7 +20,7 @@ class DashboardContainer extends Component {
   handleAdd = note => {
     return addNote(note)
       .then(added => {
-        this.setState(({ notes }) => ({ notes: [...notes, added] }));
+        this.setState(({ notes }) => ({ notes: [added, ...notes] }));
         return added;
       });
   };

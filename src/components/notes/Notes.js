@@ -14,6 +14,7 @@ class Notes extends Component {
 
     return (
       <div>
+        <button></button>
         <ul>
           {notes.map(note => (
             <Note

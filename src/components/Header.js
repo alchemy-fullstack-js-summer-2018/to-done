@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import styles from './Header.css';
 
 class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className={styles.header}>
         <section>
           <h1>3Do List</h1>
         </section>
