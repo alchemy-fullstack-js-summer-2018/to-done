@@ -26,8 +26,8 @@ class NoteForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, content, key } = this.state;
-    const note = { title, content };
+    const { title, content, key, completed } = this.state;
+    const note = { title, content, completed };
     if(key) note.key = key;
 
     this.props.onComplete(note)
@@ -49,7 +49,7 @@ class NoteForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <InputControl name="title" value={title} onChange={this.handleChange}/>
-        <InputControl name="content" value={content} onChange={this.handleChange}/>
+        <InputControl type="" name="content" value={content} onChange={this.handleChange}/>
         <p>
           <button type="submit">{key ? 'Update' : 'Add'}</button>
           {key && <button type="button" onClick={onCancel}>Cancel</button>}
@@ -59,7 +59,7 @@ class NoteForm extends Component {
   }
 }
 
-const InputControl = (props) => (
+const InputControl = props => (
   <p>
     <label>
       {props.name}:
