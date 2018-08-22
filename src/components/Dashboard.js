@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 
+import {
+  getNotes, 
+  addNote,
+  updateNote,
+  removeNote } from '../../services/notesApi';
+
 class Dashboard extends Component {
+
+  state = {
+    id: null,
+    notes: [],
+    title: '',
+    content: '',
+    completed: false
+  };
+
+
   render() {
     return (
       <div>
@@ -10,5 +26,6 @@ class Dashboard extends Component {
     );
   }
 }
+
 
 export default Dashboard;
