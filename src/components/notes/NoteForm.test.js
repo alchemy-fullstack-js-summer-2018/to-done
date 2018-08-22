@@ -38,5 +38,43 @@ describe('Note Form', () => {
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual(note);
   });
-  
+
+  it('Renders edit if is note prop', () => {
+    const handleComplete = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+    const handleCancel = jest.fn();
+
+    const note = { key: '123', name: 'Galactica', type: 'Film' };
+
+    const wrapper = mount(<NoteForm 
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+
+    wrapper.find('input[name="type"]').simulate('change', {
+      target: { 
+        name: 'type',
+        value: 'Show' 
+      }
+    });
+
+    wrapper.find('button[type="submit"]').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1); 
+    expect(calls[0][0]).toEqual({
+      ...note,
+      type: 'Show'
+    });
+
+    wrapper.find('button[type="button"]').simulate('click');
+
+    expect(handleCancel.mock.calls.length).toBe(1);
+
+  });
+
 });

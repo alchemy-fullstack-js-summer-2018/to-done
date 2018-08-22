@@ -53,3 +53,71 @@ exports[`Note Form Renders add if no note prop 1`] = `
   </form>
 </NoteForm>
 `;
+
+exports[`Note Form Renders edit if is note prop 1`] = `
+<NoteForm
+  note={
+    Object {
+      "key": "123",
+      "name": "Galactica",
+      "type": "Film",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value="Galactica"
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value="Galactica"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value="Film"
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value="Film"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
