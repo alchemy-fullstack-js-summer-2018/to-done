@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Note from './Note';
+import Note from './notes/Note';
 
 class Notes extends Component {
 
@@ -27,7 +27,5 @@ class Notes extends Component {
       </ul>
     );
   }
-
-  export default Animals;
-
 }
+export default Notes;
