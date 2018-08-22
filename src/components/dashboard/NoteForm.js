@@ -6,30 +6,49 @@ class NoteForm extends Component {
   state = {
     completed: false,
     title: '',
-    content:''
+    content:'',
+    key: null
   };
 
   static propTypes = {
-    note: PropTypes.object
+    note: PropTypes.object,
+    onComplete: PropTypes.func.isRequired
   };
 
-  // componentDidMount() {
-  //   const { note } = this.props;
-  //   if(!note) return;
+  componentDidMount() {
+    const { note } = this.props;
+    if(!note) return;
 
-  //   this.setState(note);
-  // }
+    this.setState(note);
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { title, content, key } = this.state;
+    const note = { title, content };
+    if(key) note.key = key;
+
+    this.props.onComplete(note)
+      .then(() => {
+        if(!key) return;
+        this.setState({ title: '', content: '' });
+      });
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
 
   render() {
 
-    const { title, content } = this.state;
+    const { key, title, content } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <InputControl name="title" value={title}/* onChange={this.handleChange}*//>
-        <InputControl name="content" value={content}/* onChange={this.handleChange}*//>
+        <InputControl name="title" value={title} onChange={this.handleChange}/>
+        <InputControl name="content" value={content} onChange={this.handleChange}/>
         <p>
-          <button type="submit">Add</button>
+          <button type="submit">{key ? 'Update' : 'Add'}</button>
         </p>
       </form>
     );

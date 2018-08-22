@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
 import NoteForm from './NoteForm';
+import { getNotes, addNotes } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
 
   state = {
-    notes: null
+    notes: []
+  };
+
+  handleAdd = note => {
+    return addNotes(note)
+      .then(added => {
+        this.setState(({ notes }) => {
+          return {
+            notes: [...notes, added]
+          };
+        });
+      });
   };
 
   render() {
-    const { notes } = this.state;
+    // const { notes } = this.state;
 
     return (
       <div>
         <section>
           <h3>Add Notes</h3>
-          <NoteForm /*onComplete={this.handleAdd}*//>
+          <NoteForm onComplete={this.handleAdd}/>
         </section>
 
         {/* {notes &&
