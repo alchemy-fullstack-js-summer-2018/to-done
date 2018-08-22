@@ -17,16 +17,28 @@ class NoteForm extends Component {
   };
 
   componentDidMount() {
+    const { note } = this.props;
+    if(!note) return;
 
+    this.setState(note);
   }
 
-  // handleSubmit = event => {
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { name, type, key } = this.state;
+    const note = { name, type };
+    if(key) note.key = key;
 
-  // };
+    this.props.onComplete(note)
+      .then(() => {
+        if(!key) return;
+        this.setState({ name: '', type: '' });
+      });
+  };
 
-  // handleChange = ({ target }) => {
-
-  // };
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
 
   render() {
     const { key, name, type } = this.state;
