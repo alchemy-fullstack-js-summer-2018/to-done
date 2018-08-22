@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Notes from './Notes';
 import NoteForm from './NoteForm';
-import { getNotes, addNote } from '../../services/notesApi';
+import { getNotes, addNote, updateNote } from '../../services/notesApi';
 
 class NotesContainer extends Component {
 
@@ -27,9 +27,16 @@ class NotesContainer extends Component {
       });
   };
 
-  // handleUpdate = note => {
-
-  // };
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.map(note => note.key === updated.note ? updated : note)
+          };
+        });
+      });
+  };
 
   // handleRemove = key => {
 
