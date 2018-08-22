@@ -2,7 +2,7 @@ import Note from './Note';
 import React from 'react';
 import { shallow } from 'enzyme';
 
-describe('Note', () => {
+describe.skip('Note', () => {
 
   it('Renders display or edit', () => {
     const handleRemove = jest.fn();

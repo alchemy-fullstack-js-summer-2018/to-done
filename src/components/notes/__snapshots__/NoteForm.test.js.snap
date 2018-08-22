@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Form Renders add if no note prop 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <form>
+    <InputControl
+      name="name"
+      value=""
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      value=""
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
