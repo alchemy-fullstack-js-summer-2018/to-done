@@ -16,6 +16,7 @@ export class App extends Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route exact path="/notes" component={DashboardContainer}/>
+              <Redirect to="/"/>
             </Switch>
           </main>
         </div>

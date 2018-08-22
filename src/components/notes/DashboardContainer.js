@@ -40,7 +40,7 @@ export class DashboardContainer extends Component {
           };
         });
       });
-  }
+  };
 
   handleRemove = key => {
     return removeNote(key)
