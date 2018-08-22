@@ -9,7 +9,7 @@ class Note extends Component {
   };
 
   render() {
-    const { note, onEdit } = this.props;
+    const { note, onEdit, onDelete } = this.props;
 
     return (
       <p>
