@@ -10,17 +10,17 @@ describe('Note Display', () => {
     const handleDelete = jest.fn();
 
     const wrapper = shallow(<NoteDisplay
-      note={{ name: 'name', type: 'type' }}
+      note={{ title: 'title', content: 'content' }}
       onEdit={handleEdit}
       onDelete={handleDelete}
     />);
 
     expect(toJSON(wrapper)).toMatchSnapshot();
-    wrapper.find('button[name="edit"]').simulate('click');
+    wrapper.find('button[name="Edit"]').simulate('click');
     const editCalls = handleEdit.mock.calls;
     expect(editCalls.length).toBe(1);
 
-    wrapper.find('button[name="delete"]').simulate('click');
+    wrapper.find('button[name="Delete"]').simulate('click');
     const deleteCalls = handleDelete.mock.calls;
     expect(deleteCalls.length).toBe(1);
 

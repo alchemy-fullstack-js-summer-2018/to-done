@@ -5,8 +5,8 @@ body {
 .note-form {
   display: flex;
   align-items: center;
-  border: 1px solid black;
-  background: rgb(243, 239, 239);
+  border-radius: 10px;
+  border: 3px solid orange;
   padding: 10px;
   }
 

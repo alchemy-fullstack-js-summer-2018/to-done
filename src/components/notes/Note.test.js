@@ -8,7 +8,7 @@ describe('Note', () => {
     const handleRemove = jest.fn();
     const handleUpdate = jest.fn();
 
-    const note = { key: 'abc', name: 'Today', type: 'Work' };
+    const note = { key: 'abc', title: 'Today', content: 'Work' };
     const wrapper = shallow(<Note
       note={note}
       onRemove={handleRemove}

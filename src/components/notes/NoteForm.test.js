@@ -14,21 +14,21 @@ describe('Note Form', () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
 
     const note = {
-      name: 'Volcanoes',
-      type: 'Research'
+      title: 'Volcanoes',
+      content: 'Research'
     };
 
-    wrapper.find('input[name="name"]').simulate('change', {
+    wrapper.find('input[name="title"]').simulate('change', {
       target: { 
-        name: 'name',
-        value: note.name
+        name: 'title',
+        value: note.title
       }
     });
 
-    wrapper.find('input[name="type"]').simulate('change', {
+    wrapper.find('input[name="content"]').simulate('change', {
       target: { 
-        name: 'type',
-        value: note.type 
+        name: 'content',
+        value: note.content 
       }
     });
 
@@ -45,7 +45,7 @@ describe('Note Form', () => {
     handleComplete.mockReturnValueOnce(promise);
     const handleCancel = jest.fn();
 
-    const note = { key: '123', name: 'Galactica', type: 'Film' };
+    const note = { key: '123', title: 'Galactica', content: 'Film' };
 
     const wrapper = mount(<NoteForm 
       onComplete={handleComplete}
@@ -55,9 +55,9 @@ describe('Note Form', () => {
 
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    wrapper.find('input[name="type"]').simulate('change', {
+    wrapper.find('input[name="content"]').simulate('change', {
       target: { 
-        name: 'type',
+        name: 'content',
         value: 'Show' 
       }
     });
@@ -68,7 +68,7 @@ describe('Note Form', () => {
     expect(calls.length).toBe(1); 
     expect(calls[0][0]).toEqual({
       ...note,
-      type: 'Show'
+      content: 'Show'
     });
 
     wrapper.find('button[type="button"]').simulate('click');

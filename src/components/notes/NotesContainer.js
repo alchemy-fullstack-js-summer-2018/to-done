@@ -61,7 +61,7 @@ class NotesContainer extends Component {
 
         {notes && 
         <section>
-          <h3>Notes</h3>
+          <h3>Notes List</h3>
           <Notes 
             notes={notes}
             onUpdate={this.handleUpdate}

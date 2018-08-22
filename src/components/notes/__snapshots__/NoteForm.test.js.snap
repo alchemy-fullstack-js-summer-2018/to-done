@@ -5,19 +5,20 @@ exports[`Note Form Renders add if no note prop 1`] = `
   onComplete={[MockFunction]}
 >
   <form
+    className="note-form"
     onSubmit={[Function]}
   >
     <InputControl
-      name="name"
+      name="title"
       onChange={[Function]}
       value=""
     >
       <p>
         <label>
-          name
+          title
           :
           <input
-            name="name"
+            name="title"
             onChange={[Function]}
             required={true}
             value=""
@@ -26,16 +27,16 @@ exports[`Note Form Renders add if no note prop 1`] = `
       </p>
     </InputControl>
     <InputControl
-      name="type"
+      name="content"
       onChange={[Function]}
       value=""
     >
       <p>
         <label>
-          type
+          content
           :
           <input
-            name="type"
+            name="content"
             onChange={[Function]}
             required={true}
             value=""
@@ -58,28 +59,29 @@ exports[`Note Form Renders edit if is note prop 1`] = `
 <NoteForm
   note={
     Object {
+      "content": "Film",
       "key": "123",
-      "name": "Galactica",
-      "type": "Film",
+      "title": "Galactica",
     }
   }
   onCancel={[MockFunction]}
   onComplete={[MockFunction]}
 >
   <form
+    className="note-form"
     onSubmit={[Function]}
   >
     <InputControl
-      name="name"
+      name="title"
       onChange={[Function]}
       value="Galactica"
     >
       <p>
         <label>
-          name
+          title
           :
           <input
-            name="name"
+            name="title"
             onChange={[Function]}
             required={true}
             value="Galactica"
@@ -88,16 +90,16 @@ exports[`Note Form Renders edit if is note prop 1`] = `
       </p>
     </InputControl>
     <InputControl
-      name="type"
+      name="content"
       onChange={[Function]}
       value="Film"
     >
       <p>
         <label>
-          type
+          content
           :
           <input
-            name="type"
+            name="content"
             onChange={[Function]}
             required={true}
             value="Film"

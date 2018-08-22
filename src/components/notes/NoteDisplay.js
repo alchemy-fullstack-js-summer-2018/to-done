@@ -14,9 +14,9 @@ class Note extends Component {
 
     return (
       <p className="note-display">
-        {note.name} the {note.type} 
-        <button name="edit" onClick={onEdit}>✎</button>
-        <button name="delete" onClick={onDelete}>🗑</button>
+        {note.title} the {note.content} 
+        <button name="Edit" onClick={onEdit}>✎</button>
+        <button name="Delete" onClick={onDelete}>🗑</button>
       </p>
     );
   }
