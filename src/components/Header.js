@@ -28,8 +28,8 @@ class Header extends Component {
               </li>
             </ul>
           </nav>
-
         </section>
+        
       </div>
     );
   }

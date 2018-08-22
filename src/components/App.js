@@ -24,7 +24,6 @@ class App extends Component {
               <Redirect to="/"/>
             </Switch>
           </main>
-
         </div>
       </Router>
     );

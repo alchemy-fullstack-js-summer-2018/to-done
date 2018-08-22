@@ -1,5 +1,5 @@
 import { put, post, get, del } from './request';
-const URL = 'https://todo-9ea8e.firebaseio.com';
+const URL = 'https://notes-5f0ae.firebaseio.com';
 const NOTES_URL = `${URL}/notes`;
 const getNoteUrl = key => `${NOTES_URL}/${key}.json`;
 
@@ -21,6 +21,7 @@ export const addNote = (note) => {
   return post(url, note)
     .then(res => {
       note.key = res.name;
+      return note;
     });
 };
 export const updateNote = note => {
