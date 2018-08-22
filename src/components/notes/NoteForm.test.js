@@ -47,7 +47,42 @@ describe.only('Note Form', () => {
         wrapper.update();
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
-
   });
 
+  it('renders edit if is note prop', () => {
+    const handleComplete = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+    const handleCancel = jest.fn();
+
+    const note = { key: 'abc', title: 'wash car', content: 'sunday', completed: false };
+
+    const wrapper = mount(<NoteForm
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+
+    wrapper.find('input[name="content"]').simulate('change', {
+      target: {
+        name: 'content',
+        value: 'sunday'
+      }
+    });
+
+    wrapper.find('button[type="submit"]').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual({
+      ...note,
+      content: 'sunday'
+    });
+
+    wrapper.find('button[type="button"]').simulate('click');
+
+    expect(handleCancel.mock.calls.length).toBe(1);
+  });
 });
