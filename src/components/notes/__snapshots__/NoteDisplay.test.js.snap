@@ -5,7 +5,7 @@ exports[`Note Display Renders display and then edit 1`] = `
   className="note-display"
 >
   title
-   the 
+  : 
   content
   <button
     name="Edit"
