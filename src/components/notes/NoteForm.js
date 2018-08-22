@@ -8,7 +8,6 @@ export class NoteForm extends Component {
     key: null,
     title: '',
     content: '',
-    completed: false
   };
 
   static propTypes = {
@@ -26,8 +25,8 @@ export class NoteForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, content, key, completed } = this.state;
-    const note = { title, content, completed };
+    const { title, content, key } = this.state;
+    const note = { title, content, completed: false };
     if(key) note.key = key;
 
     this.props.onComplete(note)

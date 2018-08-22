@@ -16,7 +16,8 @@ describe('Note Form', () => {
 
     const note = {
       title: 'note1',
-      content: 'finish your lab'
+      content: 'finish your lab',
+      completed: false
     };
 
     wrapper.find('input[name="title"]').simulate('change', {
@@ -51,7 +52,8 @@ describe('Note Form', () => {
 
     const sampleNote = {
       title: 'note1',
-      content: 'hey there'
+      content: 'hey there',
+      completed: false
     };
 
     const wrapper = mount(<NoteForm note={sampleNote} onComplete={handleComplete}/>);

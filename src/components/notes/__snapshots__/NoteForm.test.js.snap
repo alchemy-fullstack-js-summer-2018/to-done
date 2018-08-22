@@ -57,6 +57,7 @@ exports[`Note Form renders add if no note prop 2`] = `
       "calls": Array [
         Array [
           Object {
+            "completed": false,
             "content": "finish your lab",
             "title": "note1",
           },
@@ -121,6 +122,7 @@ exports[`Note Form renders edit if there is a note prop 1`] = `
 <NoteForm
   note={
     Object {
+      "completed": false,
       "content": "hey there",
       "title": "note1",
     }
@@ -177,6 +179,7 @@ exports[`Note Form renders edit if there is a note prop 2`] = `
 <NoteForm
   note={
     Object {
+      "completed": false,
       "content": "hey there",
       "title": "note1",
     }
@@ -186,6 +189,7 @@ exports[`Note Form renders edit if there is a note prop 2`] = `
       "calls": Array [
         Array [
           Object {
+            "completed": false,
             "content": "finish your lab",
             "title": "note1",
           },
