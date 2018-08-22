@@ -6,11 +6,11 @@ import { mount } from 'enzyme';
 describe('Note Form', () => {
 
   it('renders add if no note prop', () => {
-    const handleSubmit = jest.fn();
+    const handleComplete = jest.fn();
     const promise = Promise.resolve();
-    handleSubmit.mockReturnValueOnce(promise);
+    handleComplete.mockReturnValueOnce(promise);
 
-    const wrapper = mount(<NoteForm onSubmit={handleSubmit}/>);
+    const wrapper = mount(<NoteForm onComplete={handleComplete}/>);
     
     const note = {
       title: 'Blueberry Muffin',
@@ -24,7 +24,7 @@ describe('Note Form', () => {
       }
     });
 
-    wrapper.find('input[name="content"]').simulate('change', {
+    wrapper.find('textarea').simulate('change', {
       target: {
         name: 'content',
         value: note.content
@@ -33,7 +33,7 @@ describe('Note Form', () => {
 
     wrapper.find('button').simulate('submit');
 
-    const calls = handleSubmit.mock.calls;
+    const calls = handleComplete.mock.calls;
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual(note);
 
