@@ -15,6 +15,10 @@ class Note extends Component {
     onUpdate: PropTypes.func.isRequired
   };
 
+  handleEdit = () => {
+    this.setState({ editing: true });
+  };
+
   handleDelete = () => {
     const { note, onRemove } = this.props;
     return onRemove(note.key);
