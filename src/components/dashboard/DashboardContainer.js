@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NoteForm from './NoteForm';
 
 class DashboardContainer extends Component {
 
@@ -13,7 +14,7 @@ class DashboardContainer extends Component {
       <div>
         <section>
           <h3>Add Notes</h3>
-          {/*NoteForm onComplete={this.handleAdd} */}
+          <NoteForm /*onComplete={this.handleAdd}*//>
         </section>
 
         {/* {notes &&
