@@ -6,7 +6,7 @@ export class NoteForm extends Component {
   state = {
     editing: false,
     key: null,
-    name: '',
+    title: '',
     message: ''
   };
 
@@ -25,14 +25,14 @@ export class NoteForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { name, message, key } = this.state;
-    const note = { name, message };
+    const { title, message, key } = this.state;
+    const note = { title, message };
     if(key) note.key = key;
 
     this.props.onComplete(note)
       .then(() => {
         if(!key) return;
-        this.setState({ name: '', message: '' });
+        this.setState({ title: '', message: '' });
       });
 
   };
@@ -42,12 +42,12 @@ export class NoteForm extends Component {
   };
 
   render() {
-    const { key, name, message } = this.state;
+    const { key, title, message } = this.state;
     const { onCancel } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <InputControl name="name" value={name} onChange={this.handleChange}/>
+        <InputControl name="title" value={title} onChange={this.handleChange}/>
         <InputControl name="message" value={message} onChange={this.handleChange}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
@@ -62,7 +62,7 @@ const InputControl = (props) => {
   return (
     <p>
       <label>
-        {props.name}
+        {props.title}
         <input {...props} required/>
       </label>
     </p>

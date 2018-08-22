@@ -13,7 +13,7 @@ export class NoteDisplay extends Component {
 
     return (
       <p>
-        Title:{note.name}, Message:{note.message}
+        Title:{note.title}, Message:{note.message}
         <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={onDelete}>Delete</button>
       </p>
