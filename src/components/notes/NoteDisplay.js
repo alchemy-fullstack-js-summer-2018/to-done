@@ -15,6 +15,7 @@ class Note extends Component {
       <Fragment>
         <h2>{note.title}</h2>
         <p>{note.content}</p>
+        <p>Completed: {note.completed ? 'yes' : 'no' }</p>
         <button name="edit" onClick={onEdit}>Edit</button>
       </Fragment>
     );

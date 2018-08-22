@@ -25,7 +25,7 @@ class Note extends Component {
   handleComplete = note => {
     const { onUpdate } = this.props;
     return onUpdate(note).then(this.handleEndEdit);
-  }
+  };
 
   render() {
     const { editing } = this.state;
