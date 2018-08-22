@@ -15,7 +15,8 @@ describe('Note Form', () => {
 
     const note = {
       title: 'finish this lab',
-      notes: 'you can do it!'
+      notes: 'you can do it!',
+      completed: false
     };
 
     wrapper.find('input[name="title"]').simulate('change', {
@@ -29,6 +30,13 @@ describe('Note Form', () => {
       target: {
         name: 'notes',
         value: note.notes
+      }
+    });
+
+    wrapper.find('input[name="completed"]').simulate('change', {
+      target: {
+        name: 'completed',
+        value: note.completed
       }
     });
 

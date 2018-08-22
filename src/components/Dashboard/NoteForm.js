@@ -28,14 +28,19 @@ class NoteForm extends Component {
       });
   };
 
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
   render() {
 
     return (
       <div>
         <h3>I am the note form</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Title:<input type="text" name="title"></input></label>
-          <label>Notes:<textarea rows="4" cols="50" name="notes"></textarea></label>
+          <label>Title:<input type="text" name="title" onChange={this.handleChange}></input></label>
+          <label>Notes:<textarea rows="4" cols="50" name="notes" onChange={this.handleChange}></textarea></label>
+          <label>Completed:<input type="checkbox" name="completed" onChange={this.handleChange}></input></label>
           <p>
             <button type="submit">Submit</button>
           </p>
