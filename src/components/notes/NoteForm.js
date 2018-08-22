@@ -12,6 +12,8 @@ export default class NoteForm extends Component {
 
   static propTypes = {
     note: PropTypes.object,
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
   };
 
   render() {
@@ -19,12 +21,12 @@ export default class NoteForm extends Component {
     const { key, title, content } = this.state;
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <InputControl name="Title" value={title}/>
-        <InputControl name="Content" value={content}/>
+        <InputControl name="Content" value={content} style={{width: 300 + "px", height: 100 + "px"}}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
-          {key && <button type="button">Cancel</button>}
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );

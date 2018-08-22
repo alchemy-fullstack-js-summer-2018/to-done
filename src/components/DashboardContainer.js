@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteForm from './notes/NoteForm';
+import NoteList from './notes/NoteList';
 
 export default class DashboardContainer extends Component {
 
@@ -13,6 +14,10 @@ export default class DashboardContainer extends Component {
         <section>
           <h3>Make a Note!</h3>
           <NoteForm/>
+        </section>
+
+        <section>
+          <NoteList/>
         </section>
       </div>
     );

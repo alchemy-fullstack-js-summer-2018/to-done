@@ -5,7 +5,10 @@ export default class Header extends Component {
 
   render() {
     return (
-      <Link to="/notes">Notes</Link>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/notes">Notes</Link>
+      </div>
     );
   }
 }
