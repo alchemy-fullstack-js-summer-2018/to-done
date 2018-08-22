@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NoteDisplay from './NoteDisplay';
 import NoteForm from './NoteForm';
 
-class Note extends Note {
+class Note extends Component {
 
   state = {
     editing: false

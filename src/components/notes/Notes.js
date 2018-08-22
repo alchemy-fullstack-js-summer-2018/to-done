@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Note from './notes/Note';
+import Note from './Note';
 
 class Notes extends Component {
 
