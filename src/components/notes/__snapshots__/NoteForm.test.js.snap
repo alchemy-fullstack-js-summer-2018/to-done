@@ -55,6 +55,150 @@ exports[`Note Form Renders add if no note prop 1`] = `
 </NoteForm>
 `;
 
+exports[`Note Form Renders add if no note prop 2`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Research",
+            "title": "Volcanoes",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Volcanoes"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Volcanoes"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Research"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Research"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders add if no note prop 3`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Research",
+            "title": "Volcanoes",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Volcanoes"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Volcanoes"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Research"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Research"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
 exports[`Note Form Renders edit if is note prop 1`] = `
 <NoteForm
   note={
@@ -103,6 +247,93 @@ exports[`Note Form Renders edit if is note prop 1`] = `
             onChange={[Function]}
             required={true}
             value="Film"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders edit if is note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "content": "Film",
+      "key": "123",
+      "title": "Galactica",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Show",
+            "key": "123",
+            "title": "Galactica",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value=""
           />
         </label>
       </p>

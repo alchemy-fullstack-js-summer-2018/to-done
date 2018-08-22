@@ -37,6 +37,14 @@ describe('Note Form', () => {
     const calls = handleComplete.mock.calls;
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual(note);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
   });
 
   it('Renders edit if is note prop', () => {
@@ -71,9 +79,11 @@ describe('Note Form', () => {
       content: 'Show'
     });
 
-    wrapper.find('button[type="button"]').simulate('click');
-
-    expect(handleCancel.mock.calls.length).toBe(1);
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
 
   });
 
