@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class NoteForm extends Component {
+
   state = {
-    editing: false,
+    // editing: false,
     key: null,
     title: '',
     content: '',
@@ -37,7 +38,7 @@ class NoteForm extends Component {
   };
 
   handleChange = ({ target }) => {
-    this.setState({ [target.title]: target.value });
+    this.setState({ [target.name]: target.value });
   };
 
   render() {

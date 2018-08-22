@@ -4,7 +4,8 @@ import { mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 describe.only('Note Form', () => {
-  it.only('renders add if no note prop', () => {
+
+  it('renders add if no note prop', () => {
 
     const handleComplete = jest.fn();
     const promise = Promise.resolve();
@@ -34,12 +35,19 @@ describe.only('Note Form', () => {
     });
 
     wrapper.find('button').simulate('submit');
-
+    
     const calls = handleComplete.mock.calls;
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual(note);
-
+    
     expect(toJSON(wrapper)).toMatchSnapshot();
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
+
   });
 
 });
