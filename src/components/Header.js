@@ -5,6 +5,7 @@ export class Header extends Component {
     return (
       <div>
         <h1>What up people</h1>
+        <h2>Its Injoong in the house</h2>
       </div>
     );
   }
