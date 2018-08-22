@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <header className={styles.app}>
-            <h1>Hello World</h1>
+            <h1>To <i>Done</i> Notes</h1>
             <Header/>
           </header>
 

@@ -47,7 +47,7 @@ class NoteForm extends Component {
 
     return (
       <div>
-        <h3>I am the note form</h3>
+        <h3>Add a note:</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Title:<input type="text" name="title" value={title} onChange={this.handleChange}></input></label>
           <label>Notes:<textarea rows="4" cols="50" name="notes" value={notes} onChange={this.handleChange}></textarea></label>
