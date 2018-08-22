@@ -12,7 +12,8 @@ class NoteForm extends Component {
 
   static propTypes = {
     note: PropTypes.object,
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
   };
 
   componentDidMount() {
@@ -29,7 +30,7 @@ class NoteForm extends Component {
     if(key) note.key = key;
 
     this.props.onComplete(note)
-      .then(() => {
+      .then(({ key }) => {
         if(!key) return;
         this.setState({ title: '', content: '' });
       });

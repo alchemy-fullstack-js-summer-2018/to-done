@@ -24,6 +24,7 @@ class DashboardContainer extends Component {
             notes: [...notes, added]
           };
         });
+        return added;
       });
   };
 
