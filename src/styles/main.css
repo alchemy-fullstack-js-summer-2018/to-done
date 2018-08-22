@@ -6,12 +6,19 @@ body {
   display: flex;
   align-items: center;
   border-radius: 10px;
-  border: 3px solid orange;
+  border: 2px solid orange;
   padding: 10px;
   }
 
-.note-display {
-  justify-content: space-between;
+  .note-display, button {
+    margin: 5px;
+  }
+
+
+
+
+  input {
+    margin: 10px;
 }
 
 main {

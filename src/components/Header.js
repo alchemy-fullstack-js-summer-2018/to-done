@@ -15,7 +15,7 @@ class Header extends Component {
       
         <section className="header-container">
           <div className="logo">
-            <h1>Car Notes</h1>
+            <h1>Notes</h1>
           </div>
 
           <nav className="nav-link">
