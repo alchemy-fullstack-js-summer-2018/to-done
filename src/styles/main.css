@@ -14,9 +14,22 @@ body {
   margin: 5px;
 }
 
+button{
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+
+button:hover {
+  border-top-color: navy;
+  background: navy;
+  color: white;
+  }
+
 #content-box {
   height: 110px;
 }
+
 #title-box {
   height: 30px;
 }
