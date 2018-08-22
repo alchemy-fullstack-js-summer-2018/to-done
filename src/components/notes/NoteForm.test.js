@@ -53,4 +53,6 @@ describe('Note form', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
   });
+
+  
 });
