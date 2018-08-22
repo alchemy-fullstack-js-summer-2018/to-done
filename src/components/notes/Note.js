@@ -10,7 +10,9 @@ export default class Note extends Component {
   };
 
   static propTypes = {
-    note: PropTypes.object.isRequired
+    note: PropTypes.object.isRequired,
+    onUpdate: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
   }
 
   handleEdit = () => {
@@ -24,6 +26,11 @@ export default class Note extends Component {
 
   handleEndEdit = () => {
     this.setState({ editing: false });
+  }
+
+  handleDelete = () => {
+    const { note, onRemove } = this.props;
+    return onRemove(note.key);
   }
 
   render() {
@@ -42,6 +49,7 @@ export default class Note extends Component {
         : <NoteDisplay
         note={note}
         onEdit={this.handleEdit}
+        onDelete={this.handleDelete}
         />
       }
      </li>

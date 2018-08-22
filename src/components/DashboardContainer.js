@@ -42,6 +42,17 @@ export default class DashboardContainer extends Component {
       });
   };
 
+  handleRemove = key => {
+    return removeNote(key)
+      .then(() => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.filter(notes => notes.key !== key)
+          };
+        });
+      });
+  };
+
   render() {
 
     const { notes } = this.state;
@@ -59,6 +70,7 @@ export default class DashboardContainer extends Component {
           <NoteList
           notes={notes}
           onUpdate={this.handleUpdate}
+          onRemove={this.handleRemove}
           />
         </section>
         }

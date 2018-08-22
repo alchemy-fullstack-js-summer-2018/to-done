@@ -12,7 +12,7 @@ export default class NoteList extends Component {
 
   render() {
 
-    const { notes, onUpdate } = this.props;
+    const { notes, onUpdate, onRemove } = this.props;
 
     return (
      <ul>
@@ -21,6 +21,7 @@ export default class NoteList extends Component {
          key={note.key}
          note={note}
          onUpdate={onUpdate}
+         onRemove={onRemove}
          />
        ))}
      </ul>
