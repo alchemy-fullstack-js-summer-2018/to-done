@@ -18,14 +18,14 @@ describe('Note Form', () => {
       content: 'Research'
     };
 
-    wrapper.find('input[name="title"]').simulate('change', {
+    wrapper.find('textarea[name="title"]').simulate('change', {
       target: { 
         name: 'title',
         value: note.title
       }
     });
 
-    wrapper.find('input[name="content"]').simulate('change', {
+    wrapper.find('textarea[name="content"]').simulate('change', {
       target: { 
         name: 'content',
         value: note.content 
@@ -63,7 +63,7 @@ describe('Note Form', () => {
 
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    wrapper.find('input[name="content"]').simulate('change', {
+    wrapper.find('textarea[name="content"]').simulate('change', {
       target: { 
         name: 'content',
         value: 'Show' 

@@ -9,6 +9,7 @@ exports[`Note Form Renders add if no note prop 1`] = `
     onSubmit={[Function]}
   >
     <InputControl
+      id="title-box"
       name="title"
       onChange={[Function]}
       value=""
@@ -17,16 +18,21 @@ exports[`Note Form Renders add if no note prop 1`] = `
         <label>
           title
           :
-          <input
+          <textarea
+            cols="20"
+            id="title-box"
             name="title"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value=""
           />
         </label>
       </p>
     </InputControl>
     <InputControl
+      id="content-box"
       name="content"
       onChange={[Function]}
       value=""
@@ -35,10 +41,14 @@ exports[`Note Form Renders add if no note prop 1`] = `
         <label>
           content
           :
-          <input
+          <textarea
+            cols="20"
+            id="content-box"
             name="content"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value=""
           />
         </label>
@@ -81,6 +91,7 @@ exports[`Note Form Renders add if no note prop 2`] = `
     onSubmit={[Function]}
   >
     <InputControl
+      id="title-box"
       name="title"
       onChange={[Function]}
       value="Volcanoes"
@@ -89,16 +100,21 @@ exports[`Note Form Renders add if no note prop 2`] = `
         <label>
           title
           :
-          <input
+          <textarea
+            cols="20"
+            id="title-box"
             name="title"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Volcanoes"
           />
         </label>
       </p>
     </InputControl>
     <InputControl
+      id="content-box"
       name="content"
       onChange={[Function]}
       value="Research"
@@ -107,10 +123,14 @@ exports[`Note Form Renders add if no note prop 2`] = `
         <label>
           content
           :
-          <input
+          <textarea
+            cols="20"
+            id="content-box"
             name="content"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Research"
           />
         </label>
@@ -153,6 +173,7 @@ exports[`Note Form Renders add if no note prop 3`] = `
     onSubmit={[Function]}
   >
     <InputControl
+      id="title-box"
       name="title"
       onChange={[Function]}
       value="Volcanoes"
@@ -161,16 +182,21 @@ exports[`Note Form Renders add if no note prop 3`] = `
         <label>
           title
           :
-          <input
+          <textarea
+            cols="20"
+            id="title-box"
             name="title"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Volcanoes"
           />
         </label>
       </p>
     </InputControl>
     <InputControl
+      id="content-box"
       name="content"
       onChange={[Function]}
       value="Research"
@@ -179,10 +205,14 @@ exports[`Note Form Renders add if no note prop 3`] = `
         <label>
           content
           :
-          <input
+          <textarea
+            cols="20"
+            id="content-box"
             name="content"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Research"
           />
         </label>
@@ -216,6 +246,7 @@ exports[`Note Form Renders edit if is note prop 1`] = `
     onSubmit={[Function]}
   >
     <InputControl
+      id="title-box"
       name="title"
       onChange={[Function]}
       value="Galactica"
@@ -224,16 +255,21 @@ exports[`Note Form Renders edit if is note prop 1`] = `
         <label>
           title
           :
-          <input
+          <textarea
+            cols="20"
+            id="title-box"
             name="title"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Galactica"
           />
         </label>
       </p>
     </InputControl>
     <InputControl
+      id="content-box"
       name="content"
       onChange={[Function]}
       value="Film"
@@ -242,10 +278,14 @@ exports[`Note Form Renders edit if is note prop 1`] = `
         <label>
           content
           :
-          <input
+          <textarea
+            cols="20"
+            id="content-box"
             name="content"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value="Film"
           />
         </label>
@@ -303,6 +343,7 @@ exports[`Note Form Renders edit if is note prop 2`] = `
     onSubmit={[Function]}
   >
     <InputControl
+      id="title-box"
       name="title"
       onChange={[Function]}
       value=""
@@ -311,16 +352,21 @@ exports[`Note Form Renders edit if is note prop 2`] = `
         <label>
           title
           :
-          <input
+          <textarea
+            cols="20"
+            id="title-box"
             name="title"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value=""
           />
         </label>
       </p>
     </InputControl>
     <InputControl
+      id="content-box"
       name="content"
       onChange={[Function]}
       value=""
@@ -329,10 +375,14 @@ exports[`Note Form Renders edit if is note prop 2`] = `
         <label>
           content
           :
-          <input
+          <textarea
+            cols="20"
+            id="content-box"
             name="content"
             onChange={[Function]}
             required={true}
+            rows="4"
+            type="text"
             value=""
           />
         </label>

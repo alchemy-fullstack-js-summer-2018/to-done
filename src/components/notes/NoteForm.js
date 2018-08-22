@@ -46,7 +46,7 @@ class NoteForm extends Component {
 
     return (
       <form className="note-form" onSubmit={this.handleSubmit}>
-        <InputControl name="title" value={title} onChange={this.handleChange}/>
+        <InputControl id="title-box" name="title" value={title} onChange={this.handleChange}/>
         <InputControl id="content-box" name="content" value={content} onChange={this.handleChange}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
@@ -61,7 +61,7 @@ const InputControl = (props) => (
   <p>
     <label>
       {props.name}:
-      <input {...props} required/>
+      <textarea rows="4" cols="20" type="text" {...props} required/>
     </label>
   </p>
 );
