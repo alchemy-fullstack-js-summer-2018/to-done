@@ -14,10 +14,15 @@ class Note extends Component {
   };
 
   handleEdit = () => this.setState(({ editing }) => ({ editing: !editing }));
+  handleCheckChange = note => {
+    const { onUpdate } = this.props;
+    const { completed } = note;
+    note.completed = !completed;
+    return onUpdate(note);
+  };
 
   handleComplete = note => {
     const { onUpdate } = this.props;
-    console.log('updating', note);
     return onUpdate(note).then(this.handleEdit);
   };
 
@@ -36,6 +41,7 @@ class Note extends Component {
           : <NoteDisplay
             note={note}
             onEdit={this.handleEdit}
+            onCheckChange={this.handleCheckChange}
           />
         
         }

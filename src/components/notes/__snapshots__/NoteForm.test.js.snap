@@ -22,8 +22,10 @@ exports[`Note Form renders add if no note prop 1`] = `
       rows="2"
       value=""
     />
-    <button>
-      Submit
+    <button
+      type="submit"
+    >
+      Post
     </button>
   </form>
 </NoteForm>
@@ -69,8 +71,10 @@ exports[`Note Form renders add if no note prop 2`] = `
       rows="2"
       value="is so good"
     />
-    <button>
-      Submit
+    <button
+      type="submit"
+    >
+      Post
     </button>
   </form>
 </NoteForm>

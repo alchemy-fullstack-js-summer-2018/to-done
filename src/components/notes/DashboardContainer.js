@@ -3,8 +3,7 @@ import Dashboard from './Dashboard.js';
 import {
   getNotes,
   addNote,
-  updateNote,
-  removeNote
+  updateNote
 } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
@@ -22,6 +21,7 @@ class DashboardContainer extends Component {
     return addNote(note)
       .then(added => {
         this.setState(({ notes }) => ({ notes: [...notes, added] }));
+        return added;
       });
   };
 
@@ -31,10 +31,9 @@ class DashboardContainer extends Component {
         this.setState(({ notes }) => ({
           notes: notes.map(n => n.key === updated.key ? updated : n)
         }));
-        console.log(this.state.notes);
+        return updated;
       });
   };
-
 
   render() {
     const { notes } = this.state;

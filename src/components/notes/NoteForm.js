@@ -11,7 +11,7 @@ class NoteForm extends Component {
 
   static propTypes = {
     note: PropTypes.object,
-    onComplete: PropTypes.func,
+    onComplete: PropTypes.func.isRequired,
     onCancel: PropTypes.func
   };
 
@@ -31,11 +31,16 @@ class NoteForm extends Component {
     if(!title) return;
     const note = { title, content, completed };
     if(key) note.key = key;
-    this.props.onComplete(note);
+    this.props.onComplete(note)
+      .then(note => {
+        if(key || !note.key) return;
+        this.setState({ title: '', content: '' });
+      });
   };
 
   render() {
     const { key, title, content } = this.state;
+    const { onCancel } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -44,7 +49,8 @@ class NoteForm extends Component {
         }
         <input name="title" value={title} onChange={this.handleChange}/>
         <textarea name="content" rows="2" cols="30" value={content} onChange={this.handleChange}/>
-        <button>Submit</button>
+        {key && <button type="button" onClick={onCancel}>Cancel</button>}
+        <button type="submit">{ key ? 'Save' : 'Post' }</button>
       </form>
 
     );

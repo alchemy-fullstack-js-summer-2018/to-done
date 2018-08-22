@@ -51,7 +51,8 @@ describe('Note Form', () => {
     const note = {
       key: 'asdf',
       title: 'test title',
-      content: 'test content'
+      content: 'test content',
+      completed: false
     };
 
     const wrapper = mount(<NoteForm
@@ -66,6 +67,8 @@ describe('Note Form', () => {
         value: 'updated content'
       }
     });
+
+    wrapper.find('button[type="submit"]').simulate('submit');
 
     const calls = handleComplete.mock.calls;
     expect(calls.length).toBe(1);
