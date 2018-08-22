@@ -2,7 +2,6 @@
 const { resolve } = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const buildDir = 'docs';
 const path = resolve(__dirname, buildDir);
@@ -14,30 +13,30 @@ module.exports = {
   output: {
     path,
     filename: 'bundle.[hash].js',
-    publicPath: '/'
+    publicPath: ''
   },
   // mode (will eventually be cmd line arg in package.json scripts)
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `./${buildDir}`,
-    historyApiFallback: true,
   },
   plugins: [
     // add plugins
     new CleanPlugin(`${path}/bundle.*.js`),
-    new HtmlPlugin({ template: './src/index.html' }),
-    // new CopyWebpackPlugin([{ from: './src/sprites', to: 'sprites' }])
+    new HtmlPlugin({ template: './src/index.html' })
   ],
   module: {
     rules: [
       // js
       {
-        test: /\.js$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: { cacheDirectory: true }
+          options: {
+            cacheDirectory: true
+          }
         }
       },
 
