@@ -16,8 +16,8 @@ class Header extends Component {
         <section className="header-container">
           <div className="logo">
             <img src={logo}/>
-            <h1>Header - if this is blue, css is loading</h1>
           </div>
+          <h1>Welcome to Notes App</h1>
           <nav>
             <ul>
               <li>

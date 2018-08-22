@@ -20,7 +20,7 @@ class App extends Component {
             <h1 className="apph1">App is loading - css too if this is green</h1>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route exact path="/dashboard" component={Dashboard}/>
+              <Route path="/dashboard" component={Dashboard}/>
               <Redirect to="/"/>
             </Switch>
           </main>

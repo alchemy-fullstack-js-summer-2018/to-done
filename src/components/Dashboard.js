@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NoteForm from './notes/noteForm';
 
 import {
   getNotes, 
@@ -22,6 +23,7 @@ class Dashboard extends Component {
       <div>
         <h2>Dashboard Page</h2>
         <p>contains notes list and note form</p>
+        <NoteForm />
       </div>
     );
   }
