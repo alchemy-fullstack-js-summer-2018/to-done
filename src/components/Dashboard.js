@@ -18,6 +18,45 @@ class Dashboard extends Component {
     completed: false
   };
 
+  componentDidMount() {
+    getNotes()
+      .then(notes => {
+        this.setState({ notes });
+      });
+  }
+
+  handleAdd = note => {
+    return addNote(note)
+      .then(added => {
+        this.setState(({ notes }) => {
+          return {
+            notes: [...notes, added]
+          };
+        });
+      });
+  };
+
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.map(note => note.key === updated.key ? updated : note)
+          };
+        });
+      });
+  };
+
+  handleRemove = key => {
+    return removeNote(key)
+      .then(() => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.fileter(note => note.key !== key)
+          };
+        });
+      });
+  };
 
   render() {
 
@@ -30,7 +69,7 @@ class Dashboard extends Component {
         <p>contains notes list and note form</p>
         <section>
           <h3>Add a Note</h3>
-          <NoteForm />
+          <NoteForm onComplete={this.handleAdd}/>
         </section>
 
         {notes &&
