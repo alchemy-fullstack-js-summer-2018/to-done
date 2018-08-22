@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import NoteList from './NoteList';
+import Notes from './NoteList';
 import NoteForm from './NoteForm';
-import { getNotes, addNote } from '../../services/notesApi';
+import { getNotes, addNote, updateNote } from '../../services/notesApi';
 
 class NotesContainer extends Component {
 
@@ -10,7 +10,6 @@ class NotesContainer extends Component {
   };
 
   componentDidMount() {
-    console.log('mounted!');
     getNotes()
       .then(notes => {
         this.setState({ notes });
@@ -18,12 +17,22 @@ class NotesContainer extends Component {
   }
 
   handleAdd = note => {
-    console.log('add!');
     return addNote(note)
       .then(added => {
         this.setState(({ notes }) => {
           return {
             notes: [...notes, added]
+          };
+        });
+      });
+  };
+
+  handleUpdate = note => {
+    return updateNote(note)
+      .then(updated => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.map(note => note.key === updated.key ? updated : note)
           };
         });
       });
@@ -42,8 +51,9 @@ class NotesContainer extends Component {
         {notes &&
           <section>
             <h3>Notes</h3>
-            <NoteList
+            <Notes
               notes={notes}
+              onUpdate={this.handleUpdate}
             />
           </section>
         }

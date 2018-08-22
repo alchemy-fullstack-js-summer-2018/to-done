@@ -13,8 +13,9 @@ class NoteForm extends Component {
 
   static propTypes = {
     note: PropTypes.object,
-    onComplete: PropTypes.func.isRequired
-  }
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
+  };
 
   componentDidMount() {
     const { note } = this.props;
@@ -40,7 +41,8 @@ class NoteForm extends Component {
   };
 
   render() {
-    const { title, content } = this.state;
+    const { key, title, content } = this.state;
+    const { onCancel } = this.props;
 
     return (
 
@@ -56,20 +58,11 @@ class NoteForm extends Component {
         </label>
         <p>
           <button type="submit">Submit</button>
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );
   }
 }
-
-// const InputControl = (props) => (
-
-//   <p>
-//     <label>
-//       {props.name}:
-//       <input {...props} required/>
-//     </label>
-//   </p>
-// );
 
 export default NoteForm;
