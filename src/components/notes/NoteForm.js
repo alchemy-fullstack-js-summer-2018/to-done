@@ -31,8 +31,8 @@ export default class NoteForm extends Component {
 
     this.props.onComplete(note)
       .then(() => {
-        if(!key) return;
-        this.setState({ title: '', content: '' });
+        if(key || !note.key) return;
+        this.setState({ title: '', content: '', completed: false });
       });
   };
 
