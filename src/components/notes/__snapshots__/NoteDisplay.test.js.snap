@@ -4,6 +4,7 @@ exports[`Note Display renders display, then edit 1`] = `
 <p>
   title
    on 
+  content
   <button
     name="edit"
     onClick={[MockFunction]}

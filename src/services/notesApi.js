@@ -22,7 +22,7 @@ export const addNote = (note) => {
   const url = `${NOTES_URL}.json`;
   return post(url, note)
     .then(res => {
-      note.key = res.title;
+      note.key = res.name;
       return note;
     });
 };

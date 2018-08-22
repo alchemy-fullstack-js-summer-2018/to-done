@@ -10,7 +10,7 @@ describe('Note Display', () => {
     const handleDelete = jest.fn();
 
     const wrapper = shallow(<NoteDisplay
-      note={{ title: 'title', nontent: 'content' }}
+      note={{ title: 'title', content: 'content' }}
       onEdit={handleEdit}
       onDelete={handleDelete}
     />);

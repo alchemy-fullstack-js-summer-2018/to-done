@@ -10,8 +10,7 @@ import {
 class NotesContainer extends Component {
 
   state = {
-    // notes: null,
-    notes: []
+    notes: null,
   };
 
   componentDidMount() {

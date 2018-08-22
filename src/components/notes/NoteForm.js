@@ -62,7 +62,7 @@ class NoteForm extends Component {
 const InputControl = (props) => (
   <p>
     <label>
-      {props.title}:
+      {props.name}:
       <input {...props} required/>
     </label>
   </p>
