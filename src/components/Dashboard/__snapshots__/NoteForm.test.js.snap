@@ -17,6 +17,7 @@ exports[`Note Form renders add if no note prop 1`] = `
           name="title"
           onChange={[Function]}
           type="text"
+          value=""
         />
       </label>
       <label>
@@ -26,6 +27,7 @@ exports[`Note Form renders add if no note prop 1`] = `
           name="notes"
           onChange={[Function]}
           rows="4"
+          value=""
         />
       </label>
       <label>
@@ -34,6 +36,7 @@ exports[`Note Form renders add if no note prop 1`] = `
           name="completed"
           onChange={[Function]}
           type="checkbox"
+          value={false}
         />
       </label>
       <p>
@@ -83,6 +86,7 @@ exports[`Note Form renders add if no note prop 2`] = `
           name="title"
           onChange={[Function]}
           type="text"
+          value="finish this lab"
         />
       </label>
       <label>
@@ -92,6 +96,7 @@ exports[`Note Form renders add if no note prop 2`] = `
           name="notes"
           onChange={[Function]}
           rows="4"
+          value="you can do it!"
         />
       </label>
       <label>
@@ -100,6 +105,7 @@ exports[`Note Form renders add if no note prop 2`] = `
           name="completed"
           onChange={[Function]}
           type="checkbox"
+          value={false}
         />
       </label>
       <p>
@@ -131,6 +137,7 @@ exports[`Note Form renders correct input on add 1`] = `
           name="title"
           onChange={[Function]}
           type="text"
+          value=""
         />
       </label>
       <label>
@@ -140,6 +147,7 @@ exports[`Note Form renders correct input on add 1`] = `
           name="notes"
           onChange={[Function]}
           rows="4"
+          value=""
         />
       </label>
       <label>
@@ -148,6 +156,7 @@ exports[`Note Form renders correct input on add 1`] = `
           name="completed"
           onChange={[Function]}
           type="checkbox"
+          value={false}
         />
       </label>
       <p>
@@ -197,6 +206,7 @@ exports[`Note Form renders correct input on add 2`] = `
           name="title"
           onChange={[Function]}
           type="text"
+          value="finish this lab"
         />
       </label>
       <label>
@@ -206,6 +216,7 @@ exports[`Note Form renders correct input on add 2`] = `
           name="notes"
           onChange={[Function]}
           rows="4"
+          value="you can do it!"
         />
       </label>
       <label>
@@ -214,6 +225,7 @@ exports[`Note Form renders correct input on add 2`] = `
           name="completed"
           onChange={[Function]}
           type="checkbox"
+          value={false}
         />
       </label>
       <p>
@@ -233,6 +245,7 @@ exports[`Note Form renders edit if note prop 1`] = `
   note={
     Object {
       "completed": false,
+      "key": "4",
       "notes": "you can do it!",
       "title": "finish this lab",
     }
@@ -253,6 +266,7 @@ exports[`Note Form renders edit if note prop 1`] = `
           name="title"
           onChange={[Function]}
           type="text"
+          value="finish this lab"
         />
       </label>
       <label>
@@ -262,6 +276,7 @@ exports[`Note Form renders edit if note prop 1`] = `
           name="notes"
           onChange={[Function]}
           rows="4"
+          value="you can do it!"
         />
       </label>
       <label>
@@ -270,6 +285,7 @@ exports[`Note Form renders edit if note prop 1`] = `
           name="completed"
           onChange={[Function]}
           type="checkbox"
+          value={false}
         />
       </label>
       <p>
@@ -277,6 +293,97 @@ exports[`Note Form renders edit if note prop 1`] = `
           type="submit"
         >
           Submit
+        </button>
+        <button
+          onClick={[MockFunction]}
+          type="button"
+        >
+          Cancel
+        </button>
+      </p>
+    </form>
+  </div>
+</NoteForm>
+`;
+
+exports[`Note Form renders edit if note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "key": "4",
+      "notes": "you can do it!",
+      "title": "finish this lab",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": true,
+            "key": "4",
+            "notes": "you can do it!",
+            "title": "finish this lab",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <div>
+    <h3>
+      I am the note form
+    </h3>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Title:
+        <input
+          name="title"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <label>
+        Notes:
+        <textarea
+          cols="50"
+          name="notes"
+          onChange={[Function]}
+          rows="4"
+          value=""
+        />
+      </label>
+      <label>
+        Completed:
+        <input
+          name="completed"
+          onChange={[Function]}
+          type="checkbox"
+          value={false}
+        />
+      </label>
+      <p>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          onClick={[MockFunction]}
+          type="button"
+        >
+          Cancel
         </button>
       </p>
     </form>

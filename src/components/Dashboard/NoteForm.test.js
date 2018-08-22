@@ -106,7 +106,6 @@ describe('Note Form', () => {
     const promise = Promise.resolve();
     handleComplete.mockReturnValueOnce(promise);
     const handleCancel = jest.fn();
-
     
     const note = {
       key: '4',
@@ -126,11 +125,11 @@ describe('Note Form', () => {
     wrapper.find('input[name="completed"]').simulate('change', {
       target: {
         name: 'completed',
-        value: 'true'
+        value: true
       }
     });
 
-    wrapper.find('button').simulate('submit');
+    wrapper.find('button[type="submit"]').simulate('submit');
 
     const calls = handleComplete.mock.calls;
     expect(calls.length).toBe(1);

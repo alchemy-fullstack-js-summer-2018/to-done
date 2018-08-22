@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import NoteDisplay from './NoteDisplay';
+import NoteForm from './NoteForm';
 import PropTypes from 'prop-types';
 
 class Note extends Component {
 
+  state = {
+    editing: false
+  };
+
   static propTypes = {
-    note: PropTypes.object.isRequired
+    note: PropTypes.object.isRequired,
+  };
+
+  handleEndEdit = () => {
+    this.setState({ editing: false });
   };
 
   render() {
+    const { editing } = this.state;
     const { note } = this.props;
 
     return (
       <li>
-        <h4>Note</h4>
-        <NoteDisplay 
-          note={note}
-        />
+        {editing
+          ? <NoteForm 
+            note={note}
+            onCancel={this.handleEndEdit}
+          />
+          : <NoteDisplay 
+            note={note}
+          />
+        }
       </li>
     );
   }

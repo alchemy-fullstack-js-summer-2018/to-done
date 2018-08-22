@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class NoteForm extends Component {
 
   state = {
+    editing: false,
     key: null,
     title: '',
     notes: '',
