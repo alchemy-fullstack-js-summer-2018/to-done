@@ -92,4 +92,29 @@ describe('Note form', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
   });
+
+  it('does not change anything if cancelled', () => {
+    const handleComplete = jest.fn();
+    const handleCancel = jest.fn();
+
+    const note = { key: 'abc', title: 'get stuff', content: 'yup', completed: false };
+
+    const wrapper = mount(<NoteForm
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+
+    wrapper.find('input[name="content"]').simulate('change', {
+      target: {
+        name: 'content',
+        value: 'nope'
+      }
+    });
+
+    wrapper.find('button[type="button"]').simulate('click');
+    expect(handleCancel).toBeCalled();
+  });
 });

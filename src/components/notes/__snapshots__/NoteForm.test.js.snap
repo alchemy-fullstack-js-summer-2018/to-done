@@ -1,5 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Note form does not change anything if cancelled 1`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "yup",
+      "key": "abc",
+      "title": "get stuff",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="get stuff"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="get stuff"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="yup"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="yup"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <input
+      checked={false}
+      name="completed"
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
 exports[`Note form renders add if no note prop 1`] = `
 <NoteForm
   onComplete={[MockFunction]}

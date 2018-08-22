@@ -15,17 +15,17 @@ class DashboardContainer extends Component {
 
   componentDidMount() {
     getNotes()
-      .then(notes => {
-        this.setState({ notes });
+      .then(noteList => {
+        this.setState({ noteList });
       });
   }
 
   handleAdd = note => {
     return addNote(note)
       .then(added => {
-        this.setState(({ notes }) => {
+        this.setState(({ noteList }) => {
           return {
-            notes: [...notes, added]
+            noteList: [...noteList, added]
           };
         });
       });
