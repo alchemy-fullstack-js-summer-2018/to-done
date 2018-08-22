@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteForm from  './NoteForm';
+import NoteList from  './NoteList';
 import styles from './Notes.css';
 import { addNote, getNotes/* , updateNote, removeNote */ } from '../../services/notesApi';
 
@@ -30,13 +31,19 @@ class DashboardContainer extends Component {
   };
 
   render() {
-    const { notes } = this.state;
+    // const { notes } = this.state;
 
     return (
       <div className={styles.notes}>
         <h2>Welcome to the Dashboard!</h2>
+        
+        <section>
+          <NoteForm onComplete={this.handleAddNote}/>
+        </section>
 
-        <NoteForm onComplete={this.handleAddNote}/>
+        <section>
+          <NoteList />
+        </section>
       </div>
     );
   }
