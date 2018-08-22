@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Display renders display, then edit 1`] = `
+<p>
+  title
+   on 
+  <button
+    name="edit"
+    onClick={[MockFunction]}
+  >
+    ✎
+  </button>
+  <button
+    name="delete"
+    onClick={[MockFunction]}
+  >
+    🗑
+  </button>
+</p>
+`;
