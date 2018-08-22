@@ -6,7 +6,7 @@ exports[`Note Form renders add if no note prop 1`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
@@ -75,7 +75,7 @@ exports[`Note Form renders add if no note prop 2`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
@@ -126,7 +126,7 @@ exports[`Note Form renders correct input on add 1`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
@@ -195,7 +195,7 @@ exports[`Note Form renders correct input on add 2`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
@@ -255,7 +255,7 @@ exports[`Note Form renders edit if note prop 1`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
@@ -340,7 +340,7 @@ exports[`Note Form renders edit if note prop 2`] = `
 >
   <div>
     <h3>
-      I am the note form
+      Add a note:
     </h3>
     <form
       onSubmit={[Function]}
