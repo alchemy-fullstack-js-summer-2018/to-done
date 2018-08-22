@@ -6,7 +6,7 @@ import NoteForm from './NoteForm';
 export default class Note extends Component {
   
   state = {
-    editing: true
+    editing: false
   };
 
   static propTypes = {
@@ -14,7 +14,12 @@ export default class Note extends Component {
   }
 
   handleEdit = () => {
-    this.setState({ editing: edit })
+    this.setState({ editing: true })
+  }
+
+  handleComplete = note => {
+    const { onUpdate } = this.props;
+    return onUpdate(note).then(this.handleEndEdit);
   }
 
   handleEndEdit = () => {
@@ -29,8 +34,15 @@ export default class Note extends Component {
     return (
      <li>
        {editing
-        ? <NoteForm note={note}/>
-        : <NoteDisplay note={note}/>
+        ? <NoteForm
+        note={note}
+        onComplete={this.handleComplete}
+        onCancel={this.handleEndEdit}
+        />
+        : <NoteDisplay
+        note={note}
+        onEdit={this.handleEdit}
+        />
       }
      </li>
     );
