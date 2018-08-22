@@ -2,27 +2,31 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
+
 .note-form {
-  display: flex;
-  align-items: center;
   border-radius: 10px;
   border: 2px solid orange;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
   }
 
-  .note-display, button {
-    margin: 5px;
-  }
+.note-display, button {
+  margin: 5px;
+}
 
+#content-box {
+  height: 100px;
+}
 
-
-
-  input {
-    margin: 10px;
+input {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
