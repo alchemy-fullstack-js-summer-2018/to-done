@@ -9,7 +9,7 @@ exports[`Note display renders display, then edit 1`] = `
     content
   </p>
   <p>
-    Completed? 
+    Not completed
   </p>
   <button
     name="edit"

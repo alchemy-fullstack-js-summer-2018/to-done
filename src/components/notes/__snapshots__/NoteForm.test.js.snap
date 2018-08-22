@@ -52,8 +52,10 @@ exports[`Note form does not change anything if cancelled 1`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
@@ -119,8 +121,10 @@ exports[`Note form renders add if no note prop 1`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
@@ -198,8 +202,10 @@ exports[`Note form renders add if no note prop 2`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
@@ -277,8 +283,10 @@ exports[`Note form renders add if no note prop 3`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
@@ -347,8 +355,10 @@ exports[`Note form renders edit if there is note prop 1`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
@@ -442,8 +452,10 @@ exports[`Note form renders edit if there is note prop 2`] = `
         </label>
       </p>
     </InputControl>
+    <label>
+      Completed? 
+    </label>
     <input
-      checked={false}
       name="completed"
       onChange={[Function]}
       type="checkbox"
