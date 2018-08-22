@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Landing from './Landing';
-import NotesContainer from './notes/NotesContainer';
+import DashboardContainer from './notes/DashboardContainer';
 
 class App extends Component {
   render() { 
@@ -15,7 +15,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route exact path="/notes" component={NotesContainer}/>
+              <Route exact path="/dashboard" component={DashboardContainer}/>
               <Redirect to="/"/>
             </Switch>
           </main>
