@@ -5,9 +5,9 @@ class NoteForm extends Component {
   state = {
     editing: false,
     key: null,
-    completed: false,
     title: '',
     content: '',
+    completed: false,
   };
 
   static propTypes = {
