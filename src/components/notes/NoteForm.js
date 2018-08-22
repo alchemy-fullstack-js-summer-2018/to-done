@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 class NoteForm extends Component {
 
   state = {
-    editing: false,
     title: '',
     content: '',
     key: null,
@@ -35,7 +34,7 @@ class NoteForm extends Component {
 
     this.props.onComplete(note)
       .then(() => {
-        if(!key) return;
+        if(key) return;
         this.setState({ title: '', content: '' });
       });
   };
