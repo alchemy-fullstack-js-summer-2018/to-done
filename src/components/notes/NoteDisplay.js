@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Note extends Component {
   static propTypes = {
     note: PropTypes.object.isRequired,
-    onEdit: PropTypes.func.isRequired
-   
+    onEdit: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
   };
 
   render() {
@@ -15,6 +15,7 @@ class Note extends Component {
       <p>
         {note.title} : {note.content}
         <button name="edit" onClick={onEdit}>✎</button>
+        <button name="delete" onClick={onDelete}>🗑</button>
       </p>  
     );
   }
