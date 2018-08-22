@@ -5,7 +5,7 @@ class Notes extends Component {
   render() {
     return (
       <div>
-        <h2>Lots o' Notes</h2>
+        <h2>Lots o Notes</h2>
         <Note/>
       </div>
     );

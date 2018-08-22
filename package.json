@@ -2,12 +2,12 @@
   "name": "to-done",
   "version": "1.0.0",
   "description": "",
-  "main": "enzyme.setup.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "npm run jest",
-    "jest": "jest",
+    "jest": "jest -c ./jest/jest.config.js",
     "test:watch": "npm run jest -- --watch",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --hot --open --mode development"
