@@ -9,7 +9,27 @@ class Note extends Component {
   };
 
   static propTypes = {
-    note: PropTypes.object.isRequired
+    note: PropTypes.object.isRequired,
+    onUpdate: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
+  };
+
+  handleEdit = () => {
+    this.setState({ editing: true });
+  };
+
+  handleDelete = () => {
+    const { note, onRemove } = this.props;
+    return onRemove(note.key);
+  };
+
+  handleComplete = note => {
+    const { onUpdate } = this.props;
+    return onUpdate(note).then(this.handleEndEdit);
+  };
+
+  handleEndEdit = () => {
+    this.setState({ editing: false });
   };
 
   render() { 
@@ -21,9 +41,13 @@ class Note extends Component {
         {editing
           ? <NoteForm
             note={note}
+            onComplete={this.handleComplete}
+            onCancel={this.handleEndEdit}
           />
           : <NoteDisplay
             note={note}
+            onEdit={this.handleEdit}
+            onDelete={this.handleDelete}
           />
         }
       </li>

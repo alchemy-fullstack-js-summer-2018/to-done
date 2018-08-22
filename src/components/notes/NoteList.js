@@ -4,11 +4,13 @@ import Note from './Note';
 
 class NoteList extends Component {
   static propTypes = {
-    noteList: PropTypes.array
+    noteList: PropTypes.array,
+    onUpdate: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
   };
 
   render() {
-    const { noteList } = this.props;
+    const { noteList, onUpdate, onRemove } = this.props;
 
     return (
       <ul>
@@ -16,6 +18,8 @@ class NoteList extends Component {
           <Note
             key={note.key}
             note={note}
+            onUpdate={onUpdate}
+            onRemove={onRemove}
           />
         ))}
       </ul>
