@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Header from './Header';
+import NotesContainer from './notes/NotesContainer';
+import styles from './App.css';
 
 
 class App extends Component {
@@ -11,7 +13,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div >
+        <div className={styles.app} >
           <header>
             <Header/>
           </header>
@@ -19,8 +21,8 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
-              {/* <Route exact path="/notes" component={NotesContainer}/> 
-              <Redirect to="/"/>  */}
+              <Route exact path="/notes" component={NotesContainer}/> 
+              <Redirect to="/"/> 
             </Switch>
           </main>
         </div>
