@@ -93,3 +93,75 @@ exports[`Note form renders add if no note prop 2`] = `
   </form>
 </NoteForm>
 `;
+
+exports[`Note form renders edit if note prop 1`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "A nice note.",
+      "key": "key",
+      "title": "A note",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "A great note!",
+            "key": "key",
+            "title": "A note",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Title: 
+      <input
+        name="title"
+        onChange={[Function]}
+        value="A note"
+      />
+    </label>
+    <br />
+    <label>
+      Content: 
+      <br />
+      <textarea
+        cols="40"
+        name="content"
+        onChange={[Function]}
+        rows="3"
+        value="A great note!"
+      />
+    </label>
+    <p>
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
