@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-// import Header from './Header';
 import Landing from './Landing';
-// import styles from './App.css';
+import DashboardContainer from './dashboard/DashboardContainer';
+import styles from './App.css';
 import Header from './Header';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="dynamic-class here">
+        <div className={styles.app}>
           <header>
             <Header/>
           </header>
@@ -19,6 +19,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
+              <Route exact path="/notes" component={DashboardContainer}/>
               <Redirect to="/"/>
             </Switch>
           </main>

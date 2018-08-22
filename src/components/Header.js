@@ -19,7 +19,7 @@ class Header extends Component {
               <NavLink exact activeClassName="active" to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink exact activeClassName="active" to="/todo">To-do list</NavLink>
+              <NavLink exact activeClassName="active" to="/notes">Notes</NavLink>
             </li>
           </ul>
         </nav>

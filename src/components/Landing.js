@@ -6,7 +6,7 @@ class Landing extends Component {
     return (
       <div>
         <h2>Home Page</h2>
-        <p>Create a to-do list so you don&apos;t forget to just DO IT!</p>
+        <p>Create notes so you don&apos;t forget to just DO IT!</p>
       </div>
     );
   }
