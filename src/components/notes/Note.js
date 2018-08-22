@@ -13,25 +13,25 @@ export default class Note extends Component {
     note: PropTypes.object.isRequired,
     onUpdate: PropTypes.func.isRequired,
     onRemove: PropTypes.func.isRequired
-  }
+  };
 
   handleEdit = () => {
-    this.setState({ editing: true })
-  }
+    this.setState({ editing: true });
+  };
 
   handleComplete = note => {
     const { onUpdate } = this.props;
     return onUpdate(note).then(this.handleEndEdit);
-  }
+  };
 
   handleEndEdit = () => {
     this.setState({ editing: false });
-  }
+  };
 
   handleDelete = () => {
     const { note, onRemove } = this.props;
     return onRemove(note.key);
-  }
+  };
 
   render() {
 
@@ -39,20 +39,20 @@ export default class Note extends Component {
     const { note } = this.props;
 
     return (
-     <li>
-       {editing
-        ? <NoteForm
-        note={note}
-        onComplete={this.handleComplete}
-        onCancel={this.handleEndEdit}
-        />
-        : <NoteDisplay
-        note={note}
-        onEdit={this.handleEdit}
-        onDelete={this.handleDelete}
-        />
-      }
-     </li>
+      <li>
+        {editing
+          ? <NoteForm
+            note={note}
+            onComplete={this.handleComplete}
+            onCancel={this.handleEndEdit}
+          />
+          : <NoteDisplay
+            note={note}
+            onEdit={this.handleEdit}
+            onDelete={this.handleDelete}
+          />
+        }
+      </li>
     );
   }
 }

@@ -20,7 +20,7 @@ class App extends Component {
             <main>
               <Switch>
                 <Route exact path="/" component={Landing}/>
-                <Route exact path="/notes" component={DashboardContainer}/>
+                <Route exact path="/dashboard" component={DashboardContainer}/>
                 <Redirect to="/"/>
               </Switch>
             </main>

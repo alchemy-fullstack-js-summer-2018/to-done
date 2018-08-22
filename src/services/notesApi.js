@@ -23,6 +23,7 @@ export const addNote = note => {
   return post(url, note)
     .then(res => {
       note.key = res.name;
+      return note;
     });
 };
 

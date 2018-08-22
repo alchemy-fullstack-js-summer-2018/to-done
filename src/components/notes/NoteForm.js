@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 export default class NoteForm extends Component {
 
   state = {
-    editing: false,
     key: null,
     title: '',
-    content: ''
+    content: '',
+    completed: false
   };
 
   static propTypes = {
@@ -25,14 +25,14 @@ export default class NoteForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, content, key } = this.state;
-    const note = { title, content };
+    const { title, content, key, completed } = this.state;
+    const note = { title, content, completed };
     if(key) note.key = key;
 
     this.props.onComplete(note)
       .then(() => {
         if(!key) return;
-        this.setState({ title: '', content: ''});
+        this.setState({ title: '', content: '' });
       });
   };
 
@@ -48,7 +48,7 @@ export default class NoteForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <InputControl name="title" value={title} onChange={this.handleChange}/>
-        <InputControl name="content" value={content} onChange={this.handleChange} style={{width: 300 + "px", height: 100 + "px"}}/>
+        <InputControl name="content" value={content} onChange={this.handleChange} style={{ width: 300 + 'px', height: 100 + 'px' }}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
           {key && <button type="button" onClick={onCancel}>Cancel</button>}

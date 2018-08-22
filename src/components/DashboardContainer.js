@@ -11,13 +11,13 @@ export default class DashboardContainer extends Component {
 
   state = {
     notes: null
-  }
+  };
 
   componentDidMount() {
     getNotes()
       .then(notes => {
         this.setState({ notes });
-      })
+      });
   }
 
   handleAdd = note => {
@@ -29,12 +29,12 @@ export default class DashboardContainer extends Component {
           };
         });
       });
-  }
+  };
 
   handleUpdate = note => {
     return updateNote(note)
       .then(updated => {
-        this.setState(({ notes}) => {
+        this.setState(({ notes }) => {
           return {
             notes: notes.map(note => note.key === updated.key ? updated : note)
           };
@@ -68,9 +68,9 @@ export default class DashboardContainer extends Component {
         <section>
           <h3>Notes:</h3>
           <NoteList
-          notes={notes}
-          onUpdate={this.handleUpdate}
-          onRemove={this.handleRemove}
+            notes={notes}
+            onUpdate={this.handleUpdate}
+            onRemove={this.handleRemove}
           />
         </section>
         }
