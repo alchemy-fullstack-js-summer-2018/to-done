@@ -76,7 +76,7 @@ App
     * `onDelete` the note id should be passed to be removed
 * Test:
     * Snapshot display mode
-    * Simulate edit cick and Snapshot edit mode
+    * Simulate edit click and Snapshot edit mode
     * Simulate delete click fires `onDelete`
   
 ### NoteDisplay
