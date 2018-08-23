@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Renders display or edit 1`] = `
+<li>
+  <NoteDisplay
+    note={
+      Object {
+        "content": "Portland is sunny today",
+        "key": "abc",
+        "title": "Note #1",
+      }
+    }
+    onDelete={[Function]}
+    onEdit={[Function]}
+  />
+</li>
+`;
