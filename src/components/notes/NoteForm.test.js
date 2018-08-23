@@ -48,4 +48,46 @@ describe('Note Form', () => {
       });
   });
 
+  it('Renders edit if note prop exists', () => {
+    const handleComplete = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+    const handleCancel = jest.fn;
+
+    const note = {
+      key: 'abc',
+      title: 'Note 2',
+      content: 'This is a note',
+      completed: false
+    };
+
+    const wrapper = mount(<NoteForm
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    wrapper.find('input[name="content"]').simulate('change', {
+      target: {
+        name: 'content',
+        value: 'This is a new note'
+      }
+    });
+
+    wrapper.find('button[type="submit"]').simulate('submit');
+
+    const calls = handleComplete.mock.calls;
+    expect(calls.length).toBe(1);
+    expect(calls[0][0]).toEqual({
+      ...note,
+      content: 'This is a new note'
+    });
+
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
+  });
+
 });

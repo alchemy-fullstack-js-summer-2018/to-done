@@ -233,3 +233,103 @@ exports[`Note Form Renders add if no note prop 3`] = `
   </form>
 </NoteForm>
 `;
+
+exports[`Note Form Renders edit if note prop exists 1`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "This is a note",
+      "key": "abc",
+      "title": "Note 2",
+    }
+  }
+  onCancel={[Function]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "This is a new note",
+            "key": "abc",
+            "title": "Note 2",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Note 2"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Note 2"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      style={
+        Object {
+          "height": "100px",
+          "width": "300px",
+        }
+      }
+      value="This is a new note"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            style={
+              Object {
+                "height": "100px",
+                "width": "300px",
+              }
+            }
+            value="This is a new note"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
