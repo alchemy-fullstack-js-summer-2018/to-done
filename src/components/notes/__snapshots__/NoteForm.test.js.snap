@@ -244,7 +244,6 @@ exports[`Note Form Renders edit if note prop exists 1`] = `
       "title": "Note 2",
     }
   }
-  onCancel={[Function]}
   onComplete={
     [MockFunction] {
       "calls": Array [
@@ -324,7 +323,6 @@ exports[`Note Form Renders edit if note prop exists 1`] = `
         Update
       </button>
       <button
-        onClick={[Function]}
         type="button"
       >
         Cancel
