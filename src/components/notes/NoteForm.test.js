@@ -52,7 +52,6 @@ describe('Note Form', () => {
     const handleComplete = jest.fn();
     const promise = Promise.resolve();
     handleComplete.mockReturnValueOnce(promise);
-    const handleCancel = jest.fn;
 
     const note = {
       key: 'abc',
@@ -63,7 +62,6 @@ describe('Note Form', () => {
 
     const wrapper = mount(<NoteForm
       onComplete={handleComplete}
-      onCancel={handleCancel}
       note={note}
     />);
 
@@ -88,6 +86,29 @@ describe('Note Form', () => {
         wrapper.update();
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
+  });
+
+  it('Cancels editing mode without modifying the object', () => {
+    const handleComplete = jest.fn();
+    const handleCancel = jest.fn();
+    const promise = Promise.resolve();
+    handleComplete.mockReturnValueOnce(promise);
+
+    const note = {
+      key: 'abc',
+      title: 'Note 2',
+      content: 'This is a note',
+      completed: false
+    };
+
+    const wrapper = mount(<NoteForm
+      onComplete={handleComplete}
+      onCancel={handleCancel}
+      note={note}
+    />);
+
+    wrapper.find('button[type="button"]').simulate('click');
+    expect(handleCancel.mock.calls.length).toBe(1);
   });
 
 });
