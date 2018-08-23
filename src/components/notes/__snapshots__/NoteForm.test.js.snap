@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Form Renders add if no note prop 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      id="title-box"
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <textarea
+            cols="20"
+            id="title-box"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      id="content-box"
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <textarea
+            cols="20"
+            id="content-box"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders add if no note prop 2`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Research",
+            "title": "Volcanoes",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      id="title-box"
+      name="title"
+      onChange={[Function]}
+      value="Volcanoes"
+    >
+      <p>
+        <label>
+          title
+          :
+          <textarea
+            cols="20"
+            id="title-box"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Volcanoes"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      id="content-box"
+      name="content"
+      onChange={[Function]}
+      value="Research"
+    >
+      <p>
+        <label>
+          content
+          :
+          <textarea
+            cols="20"
+            id="content-box"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Research"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders add if no note prop 3`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Research",
+            "title": "Volcanoes",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      id="title-box"
+      name="title"
+      onChange={[Function]}
+      value="Volcanoes"
+    >
+      <p>
+        <label>
+          title
+          :
+          <textarea
+            cols="20"
+            id="title-box"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Volcanoes"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      id="content-box"
+      name="content"
+      onChange={[Function]}
+      value="Research"
+    >
+      <p>
+        <label>
+          content
+          :
+          <textarea
+            cols="20"
+            id="content-box"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Research"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders edit if is note prop 1`] = `
+<NoteForm
+  note={
+    Object {
+      "content": "Film",
+      "key": "123",
+      "title": "Galactica",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      id="title-box"
+      name="title"
+      onChange={[Function]}
+      value="Galactica"
+    >
+      <p>
+        <label>
+          title
+          :
+          <textarea
+            cols="20"
+            id="title-box"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Galactica"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      id="content-box"
+      name="content"
+      onChange={[Function]}
+      value="Film"
+    >
+      <p>
+        <label>
+          content
+          :
+          <textarea
+            cols="20"
+            id="content-box"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value="Film"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form Renders edit if is note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "content": "Film",
+      "key": "123",
+      "title": "Galactica",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "content": "Show",
+            "key": "123",
+            "title": "Galactica",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    className="note-form"
+    onSubmit={[Function]}
+  >
+    <InputControl
+      id="title-box"
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <textarea
+            cols="20"
+            id="title-box"
+            name="title"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      id="content-box"
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <textarea
+            cols="20"
+            id="content-box"
+            name="content"
+            onChange={[Function]}
+            required={true}
+            rows="4"
+            type="text"
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
