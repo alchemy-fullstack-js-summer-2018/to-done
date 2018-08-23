@@ -28,6 +28,7 @@ class NotesContainer extends Component {
             notes: [...notes, added]
           };
         });
+        return added;
       });
   };
 
