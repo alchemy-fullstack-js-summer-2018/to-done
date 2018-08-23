@@ -5,7 +5,7 @@ import Note from './Note';
 export default class NoteList extends Component {
 
   static propTypes = {
-    notes: PropTypes.arrayOf(Object),
+    notes: PropTypes.arrayOf(PropTypes.object),
     onUpdate: PropTypes.func.isRequired,
     onRemove: PropTypes.func.isRequired
   };
