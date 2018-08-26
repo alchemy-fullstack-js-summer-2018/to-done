@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note Form renders add if no note prop 1`] = `
+<NoteForm
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form renders add if no note prop 2`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "Visit Jessie",
+            "title": "Note1",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Note1"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Note1"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Visit Jessie"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Visit Jessie"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form renders add if no note prop 3`] = `
+<NoteForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "Visit Jessie",
+            "title": "Note1",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Note1"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Note1"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Visit Jessie"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Visit Jessie"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form renders edit if is passed a note prop 1`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "Test content",
+      "key": "123",
+      "title": "Test Note",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Test Note"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Test Note"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Test content"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Test content"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
+
+exports[`Note Form renders edit if is passed a note prop 2`] = `
+<NoteForm
+  note={
+    Object {
+      "completed": false,
+      "content": "Test content",
+      "key": "123",
+      "title": "Test Note",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "completed": false,
+            "content": "Updated content",
+            "key": "123",
+            "title": "Test Note",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="title"
+      onChange={[Function]}
+      value="Test Note"
+    >
+      <p>
+        <label>
+          title
+          :
+          <input
+            name="title"
+            onChange={[Function]}
+            required={true}
+            value="Test Note"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="content"
+      onChange={[Function]}
+      value="Updated content"
+    >
+      <p>
+        <label>
+          content
+          :
+          <input
+            name="content"
+            onChange={[Function]}
+            required={true}
+            value="Updated content"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</NoteForm>
+`;
