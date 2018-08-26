@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteDisplay renders display 1`] = `
+<div>
+  <h3>
+    note
+  </h3>
+  <p>
+    some content
+  </p>
+  <button
+    name="edit"
+    onClick={[MockFunction]}
+  >
+    ✏️
+  </button>
+  <button
+    name="delete"
+    onClick={[MockFunction]}
+  >
+    🗑
+  </button>
+</div>
+`;

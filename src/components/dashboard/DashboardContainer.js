@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NoteForm from './NoteForm';
 import NoteList from './NoteList';
-import { getNotes, addNotes, updateNote } from '../../services/notesApi';
+import { getNotes, addNotes, updateNote, removeNote } from '../../services/notesApi';
 
 class DashboardContainer extends Component {
 
@@ -39,6 +39,17 @@ class DashboardContainer extends Component {
       });
   };
 
+  handleRemove = key => {
+    return removeNote(key)
+      .then(() => {
+        this.setState(({ notes }) => {
+          return {
+            notes: notes.filter(notes => notes.key !== key)
+          };
+        });
+      });
+  };
+
   render() {
 
     const { notes } = this.state;
@@ -56,7 +67,7 @@ class DashboardContainer extends Component {
           <NoteList
             notes={notes}
             onUpdate={this.handleUpdate}
-            // onRemove={this.handleRemove}
+            onRemove={this.handleRemove}
           />
         </section>
         }

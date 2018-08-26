@@ -11,7 +11,7 @@ class Note extends Component {
 
   static propTypes = {
     note: PropTypes.object.isRequired,
-    // onRemove: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired
   };
 
@@ -19,10 +19,10 @@ class Note extends Component {
     this.setState({ editing: true });
   };
 
-  // handleDelete = () => {
-  //   const { note, onRemove } = this.props;
-  //   return onRemove(note.key);
-  // };
+  handleDelete = () => {
+    const { note, onRemove } = this.props;
+    return onRemove(note.key);
+  };
 
   handleComplete = note => {
     const { onUpdate } = this.props;
@@ -49,7 +49,7 @@ class Note extends Component {
           : <NoteDisplay
             note={note}
             onEdit={this.handleEdit}
-            // onDelete={this.handleDelete}
+            onDelete={this.handleDelete}
           />
         }
       </li>

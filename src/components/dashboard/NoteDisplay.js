@@ -6,12 +6,12 @@ class NoteDisplay extends Component {
   static propTypes = {
     note: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
-    // onDelete: PropTypes.func.isRequired
+    onDelete: PropTypes.func.isRequired
   };
 
   render() {
 
-    const { note, onEdit/*, onDelete*/ } = this.props;
+    const { note, onEdit, onDelete } = this.props;
 
     return (
       <div>
@@ -22,7 +22,7 @@ class NoteDisplay extends Component {
           {note.content}
         </p>
         <button name="edit" onClick={onEdit}>✏️</button>
-        {/* <button name="delete" onClick={onDelete}>✏🗑</button> */}
+        <button name="delete" onClick={onDelete}>🗑</button>
       </div>
     );
   }
