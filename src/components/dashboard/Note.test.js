@@ -13,19 +13,19 @@ describe('Note', () => {
     const wrapper = shallow(<Note note={note} onRemove={handleRemove} onUpdate={handleUpdate}/>);
 
     const component = wrapper.instance();
-    expect(toJSON(wrapper)).toMatchSnapshot();
-
+    
     expect(wrapper.state('editing')).toBe(false);
     component.handleEdit();
     expect(wrapper.state('editing')).toBe(true);
     component.handleEndEdit();
     expect(wrapper.state('editing')).toBe(false);
-
+    
     component.handleDelete();
     
     const removeCalls = handleRemove.mock.calls;
     expect(removeCalls.length).toBe(1);
     expect(removeCalls[0][0]).toBe(note.key);
+    expect(toJSON(wrapper)).toMatchSnapshot();
 
   });
 
