@@ -28,6 +28,9 @@ describe('Note', () => {
     const removeCalls = handleRemove.mock.calls;
     expect(removeCalls.length).toBe(1);
     expect(removeCalls[0][0]).toBe(note.key);
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+    
     return promise
       .then(() => {
         wrapper.update();
