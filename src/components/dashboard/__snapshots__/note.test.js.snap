@@ -15,3 +15,19 @@ exports[`Note render display or edit 1`] = `
   />
 </li>
 `;
+
+exports[`Note render display or edit 2`] = `
+<li>
+  <NoteDisplay
+    note={
+      Object {
+        "content": "Sunday, shower day :)",
+        "key": "123",
+        "title": "shower",
+      }
+    }
+    onDelete={[Function]}
+    onEdit={[Function]}
+  />
+</li>
+`;
