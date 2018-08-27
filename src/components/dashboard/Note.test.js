@@ -8,6 +8,9 @@ describe('Note', () => {
   it('render display or edit', () => {
     const handleRemove = jest.fn();
     const handleUpdate = jest.fn();
+    const promise = Promise.resolve();
+    handleRemove.mockReturnValueOnce(promise);
+    handleUpdate.mockReturnValueOnce(promise);
 
     const note = { key: '123', title: 'shower', content: 'Sunday, shower day :)' };
     const wrapper = shallow(<Note note={note} onRemove={handleRemove} onUpdate={handleUpdate}/>);
@@ -25,7 +28,11 @@ describe('Note', () => {
     const removeCalls = handleRemove.mock.calls;
     expect(removeCalls.length).toBe(1);
     expect(removeCalls[0][0]).toBe(note.key);
-    expect(toJSON(wrapper)).toMatchSnapshot();
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
 
   });
 
