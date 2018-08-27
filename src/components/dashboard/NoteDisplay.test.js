@@ -27,12 +27,6 @@ describe('NoteDisplay', () => {
     />);
 
     expect(toJSON(wrapper)).toMatchSnapshot();
-
-    return promise
-      .then(() => {
-        wrapper.update();
-        expect(toJSON(wrapper)).toMatchSnapshot();
-      });
   });
 
 });
