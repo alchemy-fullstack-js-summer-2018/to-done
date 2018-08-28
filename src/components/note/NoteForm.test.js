@@ -8,7 +8,7 @@ const Adapter = require('enzyme-adapter-react-16');
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe.skip('Note Form', () => {
+describe('Note Form', () => {
   
   it('renders add if no note prop', () => {
     const handleComplete = jest.fn();
