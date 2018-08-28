@@ -7,13 +7,13 @@ class NoteList extends Component {
   static propTypes = {
     notes: PropTypes.array,
     onUpdate: PropTypes.func.isRequired,
-    // onRemove: PropTypes.func.isRequired
+    onRemove: PropTypes.func.isRequired
   };
 
   render() {
 
-    const { notes, onUpdate/*, onRemove*/ } = this.props;
-    console.log('notes', notes);
+    const { notes, onUpdate, onRemove } = this.props;
+    if(!notes) return;
     return (
       <ul>
         {notes.map(note => (
@@ -21,7 +21,7 @@ class NoteList extends Component {
             key={note.key}
             note={note}
             onUpdate={onUpdate}
-            // onRemove={onRemove}
+            onRemove={onRemove}
           />
         ))}
       </ul>

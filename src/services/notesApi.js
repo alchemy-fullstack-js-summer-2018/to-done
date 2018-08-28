@@ -1,4 +1,4 @@
-import { post, get, put } from './request';
+import { post, get, put, del } from './request';
 
 const URL = 'https://to-done-df382.firebaseio.com';
 const NOTES_URL = `${URL}/notes`;
@@ -31,4 +31,9 @@ export const addNotes = note => {
 export const updateNote = note => {
   const url = getNoteUrl(note.key);
   return put(url, note);
+};
+
+export const removeNote = key => {
+  const url = getNoteUrl(key);
+  return del(url);
 };
