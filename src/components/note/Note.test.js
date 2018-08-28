@@ -9,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Note', () => {
   
-  it.skip('renders display or edit', () => {
+  it('renders display or edit', () => {
     const handleRemove = jest.fn();
     const handleUpdate = jest.fn();
 
