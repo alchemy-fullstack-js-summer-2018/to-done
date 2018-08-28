@@ -96,5 +96,3 @@ Write a description of the project in your README.md
     * Edit a Note
 * Tests **4pts**
 * Idiomatic props, callback props, React components **2pts**
-
-
