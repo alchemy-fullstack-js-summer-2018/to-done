@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "npm run jest",
-    "jest": "jest",
+    "test": "npm run jest -- -u",
+    "jest": "jest -c ./jest/jest.config.js",
     "test:watch": "npm run jest -- --watch",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --hot --open --mode development"
@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "jest-css-modules": "^1.1.0",
     "postcss-import": "^12.0.0",
