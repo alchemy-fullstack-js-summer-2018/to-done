@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Note extends Component {
+class NoteDisplay extends Component {
   static propTypes = {
     note: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
@@ -13,7 +13,7 @@ class Note extends Component {
 
     return (
       <p>
-        {note.name} involves {note.content}
+        {note.name} : {note.content}
         <button name="edit" onClick={onEdit}>Edit:</button>
         <button name="delete" onClick={onDelete}>Delete</button>
       </p>
@@ -21,4 +21,4 @@ class Note extends Component {
   }
 }
 
-export default Note;
+export default NoteDisplay;

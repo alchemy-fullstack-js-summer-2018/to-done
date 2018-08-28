@@ -50,7 +50,7 @@ class NoteForm extends Component {
         <InputControl name="content" value={ content } onChange={this.handleChange}/>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
-          {key && <button type="button" onClick={onCancel}>onCancel</button>}
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );

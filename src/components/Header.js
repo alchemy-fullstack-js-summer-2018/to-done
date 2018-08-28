@@ -3,14 +3,10 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.css';
 
 class Header extends Component {
-  static propTypes = {
-
-  };
 
   handleSpecial = event => {
     event.preventDefault();
     alert('that link is cute!');
-
   };
 
   render()  {
@@ -29,9 +25,8 @@ class Header extends Component {
                 <NavLink exact activeClassName="active" to="/">Landing</NavLink>
               </li>
               <li>
-                <NavLink exact activeClassName="active" to="/notes">Dashboard</NavLink> 
+                <NavLink exact activeClassName="active" to="/notes">To-Do Notes</NavLink> 
               </li>
-          
             </ul>
           </nav>
         </section>

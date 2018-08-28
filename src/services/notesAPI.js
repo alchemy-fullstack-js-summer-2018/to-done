@@ -33,7 +33,7 @@ export const updateNote = note => {
   return put(url, note);
 };
 
-export const removeNote = key => {
-  const url = getNoteUrl(key);
+export const removeNote = id => {
+  const url = getNoteUrl(id);
   return del(url);
 };

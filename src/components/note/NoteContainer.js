@@ -38,7 +38,7 @@ class NoteContainer extends Component {
       });
   };
 
-  handelRemove = key => {
+  handleRemove = key => {
     return removeNote(key)
       .then(() => {
         this.setState(({ notes }) => {

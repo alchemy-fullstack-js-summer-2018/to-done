@@ -11,8 +11,8 @@ class Note extends Component {
 
   static propTypes = {
     note: PropTypes.object.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    onUpdate: PropTypes.func.isRequired
+    onUpdate: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
   };
 
   handleEdit = () => {
@@ -26,7 +26,7 @@ class Note extends Component {
 
   handleComplete = note => {
     const { onUpdate } = this.props;
-    return onUpdate(note).then(this.handleEdit);
+    return onUpdate(note).then(this.handleEndEdit);
 
   };
 
@@ -44,12 +44,12 @@ class Note extends Component {
           ? <NoteForm
             note={note}
             onComplete={this.handleComplete}
-            onCancel={this.handleEdit}
+            onCancel={this.handleEndEdit}
           />
           : <NoteDisplay
             note={note}
-            onComplete={this.handleComplete}
-            onCancel={this.handleEndEdit}
+            onEdit={this.handleEdit}
+            onDelete={this.handleDelete}
           />
         }
       </li> 

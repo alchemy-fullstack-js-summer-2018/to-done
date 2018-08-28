@@ -17,7 +17,7 @@ class Notes extends Component {
       <ul>
         {notes.map(note => (
           <Note 
-            key={notes.key} 
+            key={note.key} 
             note={note}
             onUpdate={onUpdate}
             onRemove={onRemove}
