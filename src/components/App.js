@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Header from './Header';
 import Landing from './Landing';
 import styles from './App.css';
+import NoteContainer from './note/NoteContainer';
 
 class App extends Component {
     
@@ -14,11 +15,11 @@ class App extends Component {
           <header>
             <Header/>
           </header>
-          <h1>I App.js</h1>
+          <h1>To Done</h1>
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
-
+              <Route exact path="/notes" component={NoteContainer}/>
               <Redirect to="/"/>
             </Switch>
           </main>
