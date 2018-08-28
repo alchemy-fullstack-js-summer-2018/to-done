@@ -19,11 +19,11 @@ export const getNotes = () => {
     });
 };
 
-export const addNote = (note) => {
+export const addNote = note => {
   const url = `${NOTES_URL}.json`;
   return post(url, note)
-    .then(res => {
-      note.key = res.name;
+    .then(response => {
+      note.key = response.name;
       return note;
     });
 };
