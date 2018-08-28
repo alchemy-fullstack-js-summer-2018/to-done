@@ -19,7 +19,9 @@ class Header extends Component {
       <div className={styles.header}>
       
         <section className="header-container">
-          <h1>List</h1>
+          <div>
+            <h1>List</h1>
+          </div>
       
           <nav>
             <ul>
@@ -27,7 +29,7 @@ class Header extends Component {
                 <NavLink exact activeClassName="active" to="/">Landing</NavLink>
               </li>
               <li>
-                <NavLink exact activeClassName="active" to="/dashboard">Dashboard</NavLink> 
+                <NavLink exact activeClassName="active" to="/notes">Dashboard</NavLink> 
               </li>
           
             </ul>
